@@ -59,11 +59,16 @@
   <ItemGroup>
     <Compile Include="AppDbContext\MagazineAppDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Magazine.Domain\MagazineApp.Domain.csproj">
       <Project>{605BD5C2-3E41-4ED3-BEF9-AE7CA747270F}</Project>
       <Name>MagazineApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.Contracts\MagazineApp.Contracts.csproj">
+      <Project>{31440FD1-A989-42BB-A461-7EC9D08CCA1B}</Project>
+      <Name>MagazineApp.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -67,6 +67,7 @@
     <Compile Include="Entities\Magazine.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Filters\ArticleFilter.cs" />
+    <Compile Include="Filters\MagazineFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
