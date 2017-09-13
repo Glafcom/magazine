@@ -1,7 +1,13 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using MagazineApp.Contracts.DALContracts.Identity;
+using MagazineApp.DAL.AppDbContext;
+using MagazineApp.Domain.Entities.Identity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +19,7 @@ namespace MagazineApp.BLL.Identity {
         }
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) {
-            var manager = new ApplicationUserManager(new ApplicationUserStore(context.Get<TaskListAppDbContext>()));
+            var manager = new ApplicationUserManager(new ApplicationUserStore(context.Get<MagazineAppDbContext>()));
 
             //валидация пользователя, возможно необходимо сделать свой валидатор
             manager.UserValidator = new UserValidator<User, Guid>(manager) {
