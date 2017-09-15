@@ -1,0 +1,107 @@
+﻿@using MagazineApp.Web.Areas.Admin.Models.UsersViewModels;
+@model UsersListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users</h2>
+
+@{
+    const string ActiveStatus = "Active";
+    const string BlockedStatus = "Blocked";
+}
+
+<div class="users-list-container">
+    @if (Model.Users != null && Model.Users.Count() > 0) {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Login</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>EMail</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users) {
+                    <tr>
+                        <td class="user-status-cell" data-user-id="@user.Id">@((user.IsBlocked) ? BlockedStatus : ActiveStatus)</td>
+                        <td>@user.UserName</td>
+                        <td>@($"{user.Name} {user.Surname}")</td>
+                        <td>@user.Role.ToString()</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <a href="@Url.Action("Detail", "Users", new { id = user.Id })" class="btn btn-default">Details</a>
+                        </td>
+                        <td style="max-width:120px;">
+                            <div class="row">
+                                <div class="unblock-btn-container col-md-5" hidden="@(!user.IsBlocked)">
+                                    <button class="btn btn-default user-unblock-btn" data-user-id="@user.Id">Unblock</button>
+                                </div>
+                                <div class="block-btn-container col-md-5" hidden="@(user.IsBlocked)">
+                                    <button class="btn btn-default user-block-btn" data-user-id="@user.Id" hidden="@(user.IsBlocked)">Block</button>
+                                </div>
+                                <div class="delete-btn-container col-md-5" hidden="@(!user.IsBlocked)">
+                                    <a href="@Url.Action("DeleteUser", "Users", new { userId = user.Id })" class="btn btn-danger" data-user-id="@user.Id">Delete</a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else {
+        <p>There are no users</p>
+    }
+
+</div>
+
+<script>
+
+    $(".user-unblock-btn").click(function () {
+        var userId = $(this).data("user-id");
+
+        $.ajax({
+            method: "POST",
+            url: "@Url.Action("UnblockUser", "Users")",
+            data: { userId : userId }
+        }).complete(function(){
+            showBlockBtn(userId);
+            $(".user-status-cell[data-user-id='" + userId + "']").html("@ActiveStatus");
+        });
+    });
+
+    $(".user-block-btn").click(function () {
+        var userId = $(this).data("user-id");
+
+
+        $.ajax({
+            method: "POST",
+            url: "@Url.Action("BlockUser", "Users")",
+            data: { userId : userId }
+        }).complete(function(){
+            hideBlockBtn(userId);
+            $(".user-status-cell[data-user-id='" + userId + "']").html("@BlockedStatus");
+        });
+    });
+
+    function showBlockBtn(id){
+        $(".unblock-btn-container").find("[data-user-id='" + id + "']").parent().hide();
+        $(".block-btn-container").find("[data-user-id='" + id + "']").parent().show();
+        $(".delete-btn-container").find("[data-user-id='" + id + "']").parent().hide();
+    }
+
+    function hideBlockBtn(id){
+        $(".unblock-btn-container").find("[data-user-id='" + id +"']").parent().show();
+        $(".block-btn-container").find("[data-user-id='" + id + "']").parent().hide();
+        $(".delete-btn-container").find("[data-user-id='" + id + "']").parent().show();
+    }
+
+</script>
+

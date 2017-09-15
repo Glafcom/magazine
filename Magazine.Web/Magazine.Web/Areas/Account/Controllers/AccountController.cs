@@ -1,9 +1,17 @@
-﻿using MagazineApp.Contracts.BLLContracts.Services;
+﻿using AutoMapper;
+using MagazineApp.Common.Helpers;
+using MagazineApp.Common.Models;
+using MagazineApp.Contracts.BLLContracts.Services;
+using MagazineApp.Contracts.DtoModels;
+using MagazineApp.Domain.Enums;
+using MagazineApp.Web.Areas.Account.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -48,19 +56,7 @@ namespace MagazineApp.Web.Areas.Account.Controllers
                 if (claim != null) {
                     var result = await _accountService.SignIn(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
 
-                    if (result == SignInStatus.Success) {
-                        var user = _userService.GetUser(model.UserName);
-                        if (user != null) {
-                            IHubContext hubContext = GlobalHost.ConnectionManager.GetHubContext<TaskListHub>();
-                            hubContext.Clients.All.ConnectUser(JsonConvert.SerializeObject(new EmployeeInfoModel {
-                                Id = user.Id,
-                                UserName = user.UserName,
-                                Name = user.Name,
-                                Surname = user.Surname,
-                                TasksQty = _userDomain.GetActiveTasksOfUser(user.Id).Count(),
-                                Status = _userDomain.GetEmployeeStatus(user.Id)
-                            }));
-                        }
+                    if (result == SignInStatus.Success) {                        
                         return RedirectToLocal(returnUrl);
                     }
 
@@ -89,8 +85,7 @@ namespace MagazineApp.Web.Areas.Account.Controllers
         public async Task<ActionResult> Register(RegisterViewModel model) {
             if (ModelState.IsValid) {
                 var modelDto = Mapper.Map<UserDto>(model);
-                modelDto.Role = UserType.Unassigned.ToString();
-                OperationDetails result = await _accountService.Create(modelDto);
+                OperationResult result = await _accountService.Create(modelDto);
                 if (result.Succeeded)
                     return RedirectToAction("Login");
                 else
@@ -129,7 +124,7 @@ namespace MagazineApp.Web.Areas.Account.Controllers
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model) {
             if (ModelState.IsValid) {
 
-                OperationDetails result = await _accountService.SendCodeToRetrievePassword(model.Email);
+                OperationResult result = await _accountService.SendCodeToRetrievePassword(model.Email);
 
                 if (result.Succeeded)
                     return RedirectToAction("Index", "Home");
@@ -161,7 +156,7 @@ namespace MagazineApp.Web.Areas.Account.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model) {
             if (ModelState.IsValid) {
-                OperationDetails result = await _accountService.ResetPassword(model.Email, model.Code, model.Password);
+                OperationResult result = await _accountService.ResetPassword(model.Email, model.Code, model.Password);
 
                 if (result.Succeeded)
                     return RedirectToAction("ResetPasswordConfirmation", "Account");

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.Contracts", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.BLL", "MagazineApp.BLL\MagazineApp.BLL.csproj", "{08E20B9E-79A3-4ED2-A2AB-D9C9469260A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.Common", "MagazineApp.Common\MagazineApp.Common.csproj", "{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{08E20B9E-79A3-4ED2-A2AB-D9C9469260A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E20B9E-79A3-4ED2-A2AB-D9C9469260A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E20B9E-79A3-4ED2-A2AB-D9C9469260A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

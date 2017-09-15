@@ -14,11 +14,11 @@ namespace MagazineApp.Domain.Entities {
 
         public int Number { get; set; }
         public Guid? MainPictureId { get; set; }
-        public Guid? RedactorId { get; set; } 
+        public Guid? PublisherId { get; set; } 
         public DateTime? PublishDate { get; set; }
 
         public virtual Picture MainPicture { get; set; }
-        public virtual User Redactor { get; set; }
+        public virtual User Publisher { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
     }
 }

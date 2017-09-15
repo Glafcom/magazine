@@ -1,5 +1,7 @@
-﻿using MagazineApp.Contracts.DtoModels;
+﻿using MagazineApp.Common.Models;
+using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace MagazineApp.Contracts.BLLContracts.Services {
     public interface IAccountService {
-        Task<OperationDetails> Create(UserDto userDto);
+        Task<OperationResult> Create(UserDto userDto);
         Task<ClaimsIdentity> Authenticate(UserDto userDto);
-        Task<OperationDetails> ConfirmEmail(Guid userId, string code);
-        Task<OperationDetails> ResetPassword(string email, string code, string password);
-        Task<OperationDetails> SendCodeToRetrievePassword(string email);
+        Task<OperationResult> ConfirmEmail(Guid userId, string code);
+        Task<OperationResult> ResetPassword(string email, string code, string password);
+        Task<OperationResult> SendCodeToRetrievePassword(string email);
         Task SignIn(User user, bool isPersistent, bool rememberMe);
         Task<SignInStatus> SignIn(string userName, string password, bool rememberMe, bool shouldLockout);
     }

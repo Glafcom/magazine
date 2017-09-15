@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagazineApp.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace MagazineApp.Web.Areas.Account.Models {
         [Required]
         [Display(Name = "Login")]
         public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Role")]
+        public UserType Role { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
