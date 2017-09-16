@@ -9,7 +9,7 @@ namespace MagazineApp.Domain.Filters {
         public int? Number { get; set; }
         public DateTime? PublishDateFrom { get; set; }
         public DateTime? PublishDateTo { get; set; }
-        public Guid? Redactor { get; set; }
+        public Guid? Publisher { get; set; }
         public string ArticleCaption { get; set; }
         public Guid? ArticleAuthor { get; set; }
     }

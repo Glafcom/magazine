@@ -1,0 +1,7 @@
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\AutoMapper.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\AutoMapper.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.csprojResolveAssemblyReference.cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.pdb

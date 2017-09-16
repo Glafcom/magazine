@@ -1,0 +1,1 @@
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\obj\Debug\MagazineApp.Web.csprojResolveAssemblyReference.cache

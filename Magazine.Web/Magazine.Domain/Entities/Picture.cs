@@ -1,4 +1,4 @@
-﻿using Magazine.Domain.Entities.Identity;
+﻿using MagazineApp.Domain.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,9 @@ namespace MagazineApp.Domain.Entities {
         public byte[] Content { get; set; }
         public string Description { get; set; }
         public Guid AuthorId { get; set; }
+        public Guid ArticleId { get; set; }
 
         public virtual User Author { get; set; }
+        public virtual Article Article { get; set; }
     }
 }

@@ -232,22 +232,11 @@
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UsersListViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UserViewModel.cs" />
-    <Compile Include="Areas\Editor\Controllers\ArticlesController.cs" />
-    <Compile Include="Areas\Editor\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Editor\Controllers\MagazinesController.cs" />
-    <Compile Include="Areas\Editor\Controllers\PicturesController.cs" />
-    <Compile Include="Areas\Editor\EditorAreaRegistration.cs" />
     <Compile Include="Areas\Journalist\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Journalist\Controllers\HomeController.cs" />
     <Compile Include="Areas\Journalist\Controllers\MagazinesController.cs" />
-    <Compile Include="Areas\Journalist\Controllers\PicturesController.cs" />
     <Compile Include="Areas\Journalist\JournalistAreaRegistration.cs" />
-    <Compile Include="Areas\Journalist\Models\Articles\ArticlesListViewModel.cs" />
-    <Compile Include="Areas\Journalist\Models\Articles\ArticleViewModel.cs" />
-    <Compile Include="Areas\Journalist\Models\MagazinesViewModels\MagazinesListViewModel.cs" />
-    <Compile Include="Areas\Journalist\Models\MagazinesViewModels\MagazineViewModel.cs" />
-    <Compile Include="Areas\Journalist\Models\PicturesViewModels\PicturesListViewModel.cs" />
-    <Compile Include="Areas\Journalist\Models\PicturesViewModels\PictureViewModel.cs" />
+    <Compile Include="Areas\Journalist\Models\ArticlesViewModels\ArticlePictureViewModel.cs" />
     <Compile Include="Areas\Reader\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Reader\Controllers\HomeController.cs" />
     <Compile Include="Areas\Reader\Controllers\MagazinesController.cs" />
@@ -256,6 +245,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArticlesViewModels\ArticlesListViewModel.cs" />
+    <Compile Include="Models\ArticlesViewModels\ArticleViewModel.cs" />
+    <Compile Include="Models\MagazinesViewModels\MagazinesListViewModel.cs" />
+    <Compile Include="Models\MagazinesViewModels\MagazineViewModel.cs" />
+    <Compile Include="Models\PicturesViewModels\PicturesListViewModel.cs" />
+    <Compile Include="Models\PicturesViewModels\PictureViewModel.cs" />
+    <Compile Include="Models\UsersViewModels\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -272,7 +268,6 @@
     </Content>
     <Content Include="Areas\Account\Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Editor\Views\web.config" />
     <Content Include="Areas\Journalist\Views\web.config" />
     <Content Include="Areas\Reader\Views\web.config" />
     <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
@@ -316,12 +311,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Editor\Models\" />
-    <Folder Include="Areas\Editor\Views\Articles\" />
-    <Folder Include="Areas\Editor\Views\Home\" />
-    <Folder Include="Areas\Editor\Views\Magazines\" />
-    <Folder Include="Areas\Editor\Views\Pictures\" />
-    <Folder Include="Areas\Editor\Views\Shared\" />
     <Folder Include="Areas\Journalist\Views\Articles\" />
     <Folder Include="Areas\Journalist\Views\Home\" />
     <Folder Include="Areas\Journalist\Views\Magazines\" />
@@ -331,7 +320,6 @@
     <Folder Include="Areas\Reader\Views\Home\" />
     <Folder Include="Areas\Reader\Views\Magazines\" />
     <Folder Include="Areas\Reader\Views\Shared\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
