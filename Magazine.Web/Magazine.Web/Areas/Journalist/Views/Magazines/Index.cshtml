@@ -1,0 +1,63 @@
+﻿@using MagazineApp.Web.Models.MagazinesViewModels;
+@model MagazinesListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Journalist/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Magazines</h2>
+
+<div class="magazines-container container">
+    <div class="magazines-table">
+        @if (Model.Magazines != null && Model.Magazines.Count() > 0) {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Picture</th>
+                        <th>Status</th>
+                        <th>Publish Date</th>
+                        <th>Publisher</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var magazine in Model.Magazines) {
+                        @{
+                            var isPublished = magazine.IsPublished.HasValue && magazine.IsPublished.Value;
+                            var publisher = isPublished ? $"{magazine.Publisher.Name} {magazine.Publisher.Surname}" : string.Empty;
+                        }
+                            <tr>
+                                <td>@magazine.Number</td>
+                                <td>
+                                    <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture.Content)) : "#")" class="file-preview-image" title="@(magazine.MainPicture?.Name ?? string.Empty)">
+                                </td>
+                                <td>@(isPublished ? "Published" : "Not published")</td>
+                                <td>@(isPublished ? magazine.PublishDate.Value.ToString("dd-MM-yyyy") : string.Empty)</td>
+                                <td>@publisher</td>
+                                <td>
+                                    <button class="btn btn-default publish-button">Publish</button>
+                                    <button class="btn btn-default unpublish-button">Unpublish</button>
+                                </td>
+                                <td><a href="@Url.Action("Details", "Magazines", new { id = magazine.Id })" class="btn btn-default">Details</a></td>
+                                <td><a href="@Url.Action("Edit", "Magazines", new { id = magazine.Id })" class="btn btn-default">Edit</a></td>
+                                <td>
+                                    <a href="@Url.Action("Delete", "Magazines", new { id = magazine.Id })" class="btn btn-default">Delete</a>
+                                </td>
+                            </tr>
+                            }
+                </tbody>
+            </table>
+                            }
+                            else {
+                                <p>There are no users</p>
+                            }
+        <a href="@Url.Action("Create", "Magazines")" class="btn btn-default pull-right">Add</a>
+
+    </div>
+</div>
+

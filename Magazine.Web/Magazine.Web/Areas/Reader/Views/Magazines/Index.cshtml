@@ -1,0 +1,24 @@
+﻿@using MagazineApp.Web.Models.MagazinesViewModels;
+@model MagazinesListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Journalist/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Magazines</h2>
+
+<div class="magazines-container container">
+    <div class="row">
+        @foreach(var magazine in Model.Magazines) {
+            <div class="col-md-4">
+                <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">
+                    <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture.Content)) : "#")" class="file-preview-image" title="@(magazine.MainPicture?.Name ?? string.Empty)">
+                </a>
+                <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">@magazine.PublishDate.Value.ToString("MMM yyyy")</a>
+            </div>
+        }
+    </div>
+
+</div>
+

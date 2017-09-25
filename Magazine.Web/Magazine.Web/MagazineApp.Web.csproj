@@ -237,6 +237,7 @@
     <Compile Include="Areas\Journalist\Controllers\MagazinesController.cs" />
     <Compile Include="Areas\Journalist\JournalistAreaRegistration.cs" />
     <Compile Include="Areas\Journalist\Models\ArticlesViewModels\ArticlePictureViewModel.cs" />
+    <Compile Include="Areas\Journalist\Models\MagazinesViewModels\BlankMagazineViewModel.cs" />
     <Compile Include="Areas\Reader\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Reader\Controllers\HomeController.cs" />
     <Compile Include="Areas\Reader\Controllers\MagazinesController.cs" />
@@ -282,6 +283,14 @@
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Detail.cshtml" />
     <Content Include="Areas\Journalist\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\Index.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\_MagazineFilterPartialView.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\Details.cshtml" />
+    <Content Include="Areas\Reader\Views\Magazines\_MagazineFilterPartialView.cshtml" />
+    <Content Include="Areas\Reader\Views\Magazines\Details.cshtml" />
+    <Content Include="Areas\Reader\Views\Magazines\Index.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\Blank.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\ArticlesList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -313,12 +322,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Journalist\Views\Articles\" />
     <Folder Include="Areas\Journalist\Views\Home\" />
-    <Folder Include="Areas\Journalist\Views\Magazines\" />
     <Folder Include="Areas\Journalist\Views\Pictures\" />
     <Folder Include="Areas\Reader\Models\" />
     <Folder Include="Areas\Reader\Views\Articles\" />
     <Folder Include="Areas\Reader\Views\Home\" />
-    <Folder Include="Areas\Reader\Views\Magazines\" />
     <Folder Include="Areas\Reader\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,68 @@
+﻿@using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
+@model BlankMagazineViewModel
+
+@{
+    ViewBag.Title = "Blank";
+    Layout = "~/Areas/Journalist/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    var caption = Model.IsNew
+        ? "Create Magazine"
+        : "Edit Magazine";
+    var action = Model.IsNew
+        ? "Create"
+        : "Edit";
+}
+
+
+
+<div class="container magazine-container">
+    @using (Html.BeginForm(action, "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+        @Html.AntiForgeryToken()
+        <h2>@caption</h2>
+        <hr />
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.MainPictureId, new { @class = "col-md-2 control-label" })
+            
+        </div>
+
+        <h3>Articles</h3>
+
+        <div class="container articles-container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Picture</th>
+                        <th>Caption</th>
+                        <th>Short Text</th>
+                        <th>Author</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var article in Model.Articles) {
+                        <tr>
+                            <td>
+                                <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture.Content)) : "#")" class="file-preview-image" title="@(article.MainPicture?.Name ?? string.Empty)">
+                            </td>
+                            <td>@article.Caption</td>
+                            <td>@article.ShortText</td>
+                            <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Articles", new { id = article.Id })" class="btn btn-default">Details</a>
+                            </td>
+                            <td>
+                                <button class="btn btn-default remove-article-btn">Remove</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="@Url.Action("Create", "Articles")" class="btn btn-default pull-right">Add</a>
+        </div>
+    }
+</div>
+

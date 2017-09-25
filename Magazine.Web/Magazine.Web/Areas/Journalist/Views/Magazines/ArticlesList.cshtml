@@ -1,0 +1,42 @@
+﻿@using MagazineApp.Web.Models.ArticlesViewModels;
+@model ArticlesListViewModel
+
+@{
+    ViewBag.Title = "ArticlesList";
+    Layout = "~/Areas/Journalist/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Articles List</h2>
+
+<div class="container articles-container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Picture</th>
+                <th>Caption</th>
+                <th>Short Text</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var article in Model.Articles) {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="chkArticleSelect" data-id="@article.Id" />
+                    </td>
+                    <td>
+                        <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture.Content)) : "#")" class="file-preview-image" title="@(article.MainPicture?.Name ?? string.Empty)">
+                    </td>
+                    <td>@article.Caption</td>
+                    <td>@article.ShortText</td>
+                    <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button id="add-articles-btn" class="btn btn-default">Add</button>
+    <a href="@Url.Action()"></a>
+</div>
+

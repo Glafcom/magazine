@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MagazineApp.Web.Models.MagazinesViewModels {
-    public class MagazineViewModel {
-        public Guid Id { get; set; }
+namespace MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels {
+    public class BlankMagazineViewModel {
+        public bool IsNew { get; set; }
         public int Number { get; set; }
         public Guid? MainPictureId { get; set; }
         public UserViewModel Publisher { get; set; }
