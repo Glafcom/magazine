@@ -235,8 +235,10 @@
     <Compile Include="Areas\Journalist\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Journalist\Controllers\HomeController.cs" />
     <Compile Include="Areas\Journalist\Controllers\MagazinesController.cs" />
+    <Compile Include="Areas\Journalist\Controllers\PicturesController.cs" />
     <Compile Include="Areas\Journalist\JournalistAreaRegistration.cs" />
     <Compile Include="Areas\Journalist\Models\ArticlesViewModels\ArticlePictureViewModel.cs" />
+    <Compile Include="Areas\Journalist\Models\ArticlesViewModels\BlankArticleViewModel.cs" />
     <Compile Include="Areas\Journalist\Models\MagazinesViewModels\BlankMagazineViewModel.cs" />
     <Compile Include="Areas\Reader\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Reader\Controllers\HomeController.cs" />
@@ -291,6 +293,11 @@
     <Content Include="Areas\Reader\Views\Magazines\Index.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\Blank.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\ArticlesList.cshtml" />
+    <Content Include="Areas\Journalist\Views\Articles\Index.cshtml" />
+    <Content Include="Areas\Journalist\Views\Articles\Details.cshtml" />
+    <Content Include="Areas\Journalist\Views\Articles\Blank.cshtml" />
+    <Content Include="Areas\Journalist\Views\Articles\_ArticleFilterPartialView.cshtml" />
+    <Content Include="Areas\Journalist\Views\Pictures\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -320,9 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Journalist\Views\Articles\" />
     <Folder Include="Areas\Journalist\Views\Home\" />
-    <Folder Include="Areas\Journalist\Views\Pictures\" />
     <Folder Include="Areas\Reader\Models\" />
     <Folder Include="Areas\Reader\Views\Articles\" />
     <Folder Include="Areas\Reader\Views\Home\" />

@@ -5,15 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MagazineApp.Web.Models.ArticlesViewModels {
-    public class ArticleViewModel {
-        public Guid Id { get; set; }
+namespace MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels {
+    public class BlankArticleViewModel {
+        public bool IsNew { get; set; }
+        public Guid? MainPictureId { get; set; }
         public string Caption { get; set; }
         public string ShortText { get; set; }
         public string LongText { get; set; }
-        public UserViewModel Author { get; set; }
-        public PictureViewModel MainPicture { get; set; }
-
-        public DateTime CreateDate { get; set; }
+        public PictureViewModel MainPicture { get; set; }        
     }
 }
