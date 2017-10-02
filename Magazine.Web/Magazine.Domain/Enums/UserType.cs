@@ -8,7 +8,6 @@ namespace MagazineApp.Domain.Enums {
     public enum UserType {
         Admin,
         Journalist,
-        Editor,
-        Reader
+        Editor
     }
 }

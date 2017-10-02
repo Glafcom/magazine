@@ -11,6 +11,6 @@ namespace MagazineApp.Web.Models.PicturesViewModels {
         public byte[] Content { get; set; }
         public string Description { get; set; }
 
-        public UserViewModel Author { get; set; }
+        public string Author { get; set; }
     }
 }

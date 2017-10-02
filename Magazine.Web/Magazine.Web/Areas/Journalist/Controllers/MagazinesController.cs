@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MagazineApp.Web.Areas.Journalist.Controllers
 {
+    [Authorize(Roles = "Journalist,Editor")]
     public class MagazinesController : Controller
     {
         protected readonly IMagazineService _magazineService;

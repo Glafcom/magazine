@@ -1,7 +1,10 @@
-﻿using MagazineApp.Contracts.BLLContracts.Services;
+﻿using AutoMapper;
+using MagazineApp.Common.Models;
+using MagazineApp.Contracts.BLLContracts.Services;
 using MagazineApp.Contracts.DALContracts.Identity;
 using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities.Identity;
+using MagazineApp.Domain.Enums;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
@@ -21,7 +24,7 @@ namespace MagazineApp.BLL.Services {
             _signInManager = signInManager;
         }
 
-        public async Task<OperationDetails> Create(UserDto userDto) {
+        public async Task<OperationResult> Create(UserDto userDto) {
 
             User user = await _userManager.FindByNameAsync(userDto.UserName);
 
@@ -33,14 +36,14 @@ namespace MagazineApp.BLL.Services {
                 var result = await _userManager.CreateAsync(user, userDto.Password);
 
                 if (result.Errors.Count() > 0)
-                    return new OperationDetails(false, result.Errors.FirstOrDefault(), "");
+                    return new OperationResult(false, result.Errors.FirstOrDefault(), "");
 
-                await _userManager.AddToRoleAsync(user.Id, UserType.Unassigned.ToString());
+                await _userManager.AddToRoleAsync(user.Id, userDto.Role.ToString());
 
-                return new OperationDetails(true, "Registration successfully complited", "");
+                return new OperationResult(true, "Registration successfully complited", "");
             }
             else {
-                return new OperationDetails(false, "This user is already exists", "UserName");
+                return new OperationResult(false, "This user is already exists", "UserName");
             }
         }
 
@@ -55,35 +58,35 @@ namespace MagazineApp.BLL.Services {
             return claim;
         }
 
-        public async Task<OperationDetails> ConfirmEmail(Guid userId, string code) {
+        public async Task<OperationResult> ConfirmEmail(Guid userId, string code) {
             var result = await _userManager.ConfirmEmailAsync(userId, code);
             if (result.Errors.Count() > 0)
-                return new OperationDetails(false, result.Errors.FirstOrDefault(), "");
+                return new OperationResult(false, result.Errors.FirstOrDefault(), "");
 
-            return new OperationDetails(true, "Email confirmed", "");
+            return new OperationResult(true, "Email confirmed", "");
         }
 
-        public async Task<OperationDetails> ResetPassword(string email, string code, string password) {
+        public async Task<OperationResult> ResetPassword(string email, string code, string password) {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null) {
                 // Don't reveal that the user does not exist
-                return new OperationDetails(false, "The user does not exist", "");
+                return new OperationResult(false, "The user does not exist", "");
             }
             var result = await _userManager.ResetPasswordAsync(user.Id, code, password);
             if (result.Errors.Count() > 0) {
-                return new OperationDetails(false, result.Errors.FirstOrDefault(), "");
+                return new OperationResult(false, result.Errors.FirstOrDefault(), "");
             }
 
-            return new OperationDetails(true, "Password was successfully updated", "");
+            return new OperationResult(true, "Password was successfully updated", "");
         }
 
-        public async Task<OperationDetails> SendCodeToRetrievePassword(string email) {
+        public async Task<OperationResult> SendCodeToRetrievePassword(string email) {
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null || !(await _userManager.IsEmailConfirmedAsync(user.Id))) {
-                return new OperationDetails(false, "User does not exists or is not confirmed", "");
+                return new OperationResult(false, "User does not exists or is not confirmed", "");
             }
 
-            return new OperationDetails(true, "The code for password confirmation has been sent", "");
+            return new OperationResult(true, "The code for password confirmation has been sent", "");
         }
 
         public async Task SignIn(User user, bool isPersistent, bool rememberMe) {

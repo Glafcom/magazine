@@ -17,7 +17,8 @@ namespace MagazineApp.Web.Areas.Journalist
             context.MapRoute(
                 "Journalist_default",
                 "Journalist/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MagazineApp.Web.Areas.Journalist.Controllers" }
             );
         }
     }

@@ -10,8 +10,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MagazineApp.Web.Areas.Journalist.Controllers
-{
+namespace MagazineApp.Web.Areas.Journalist.Controllers {
+    [Authorize(Roles = "Journalist,Editor")]
     public class ArticlesController : Controller
     {
         protected readonly IArticleService _articleService;

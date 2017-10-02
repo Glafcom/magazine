@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -110,6 +114,10 @@
     <ProjectReference Include="..\Magazine.Domain\MagazineApp.Domain.csproj">
       <Project>{605BD5C2-3E41-4ED3-BEF9-AE7CA747270F}</Project>
       <Name>MagazineApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.Common\MagazineApp.Common.csproj">
+      <Project>{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}</Project>
+      <Name>MagazineApp.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\MagazineApp.Contracts\MagazineApp.Contracts.csproj">
       <Project>{31440FD1-A989-42BB-A461-7EC9D08CCA1B}</Project>

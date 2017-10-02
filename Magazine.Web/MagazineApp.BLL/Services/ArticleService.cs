@@ -29,12 +29,6 @@ namespace MagazineApp.BLL.Services {
             if (filter.CreateDateTo.HasValue)
                 articles = articles.Where(a => a.CreateDate <= filter.CreateDateTo);
 
-            if (filter.PublishDateFrom.HasValue)
-                articles = articles.Where(a => a.PublishDate >= filter.PublishDateFrom);
-
-            if (filter.PublishDateTo.HasValue)
-                articles = articles.Where(a => a.PublishDate <= filter.PublishDateTo);
-
             return articles.ToList();
         }
 

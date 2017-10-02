@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace MagazineApp.Web.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         protected readonly IUserService _userService;

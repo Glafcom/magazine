@@ -10,10 +10,6 @@ namespace MagazineApp.Domain.Entities {
         public string Name { get; set; }
         public byte[] Content { get; set; }
         public string Description { get; set; }
-        public Guid AuthorId { get; set; }
-        public Guid ArticleId { get; set; }
-
-        public virtual User Author { get; set; }
-        public virtual Article Article { get; set; }
+        public string Author { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MagazineApp.Web.Areas.Journalist.Controllers
 {
+    [Authorize(Roles = "Journalist,Editor")]
     public class PicturesController : Controller
     {
         // GET: Journalist/Pictures

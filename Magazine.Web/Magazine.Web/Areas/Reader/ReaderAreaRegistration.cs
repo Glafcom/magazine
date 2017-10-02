@@ -17,7 +17,8 @@ namespace MagazineApp.Web.Areas.Reader
             context.MapRoute(
                 "Reader_default",
                 "Reader/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MagazineApp.Web.Areas.Reader.Controllers" }
             );
         }
     }

@@ -1,4 +1,3 @@
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll.config
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.pdb

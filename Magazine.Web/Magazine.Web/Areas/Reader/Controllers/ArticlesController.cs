@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MagazineApp.Web.Areas.Reader.Controllers
-{
+{    
     public class ArticlesController : Controller
     {
         protected readonly IArticleService _articleService;
