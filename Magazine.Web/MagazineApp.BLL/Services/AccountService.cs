@@ -38,8 +38,6 @@ namespace MagazineApp.BLL.Services {
                 if (result.Errors.Count() > 0)
                     return new OperationResult(false, result.Errors.FirstOrDefault(), "");
 
-                await _userManager.AddToRoleAsync(user.Id, userDto.Role.ToString());
-
                 return new OperationResult(true, "Registration successfully complited", "");
             }
             else {

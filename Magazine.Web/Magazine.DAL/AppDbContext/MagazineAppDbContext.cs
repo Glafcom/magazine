@@ -12,7 +12,7 @@ namespace MagazineApp.DAL.AppDbContext {
     public class MagazineAppDbContext : IdentityDbContext<User, Role, Guid, UserLogin, UserRole, UserClaim> {
 
         public MagazineAppDbContext()
-            : base("MagazineDbConnection") {
+            : base("MagazineAppDbConnection") {
 
         }
 

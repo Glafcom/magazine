@@ -20,6 +20,7 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\EntityFramework.SqlServer.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Common.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Contracts.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.DAL.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Domain.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Infrastructure.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\Microsoft.AI.Agent.Intercept.dll
@@ -58,7 +59,7 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\WebActivatorEx.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\WebGrease.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.BLL.dll
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.DAL.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.DAL.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Domain.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Common.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.Contracts.pdb
@@ -98,7 +99,6 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\Antlr3.Runtime.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\Newtonsoft.Json.xml
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.BLL.pdb
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\bin\MagazineApp.DAL.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\obj\Debug\MagazineApp.Web.csprojResolveAssemblyReference.cache
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\obj\Debug\MagazineApp.Web.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Web\obj\Debug\MagazineApp.Web.pdb

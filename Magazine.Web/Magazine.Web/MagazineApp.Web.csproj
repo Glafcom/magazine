@@ -241,6 +241,7 @@
     <Compile Include="Areas\Account\Models\SendCodeViewModel.cs" />
     <Compile Include="Areas\Account\Models\VerifyCodeViewModel.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UsersListViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UserViewModel.cs" />
@@ -315,6 +316,7 @@
     <Content Include="Areas\Reader\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Journalist\Views\Home\Index.cshtml" />
     <Content Include="Areas\Reader\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

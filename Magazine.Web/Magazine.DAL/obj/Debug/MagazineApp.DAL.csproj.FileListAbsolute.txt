@@ -31,7 +31,7 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\bin\Debug\AutoMapper.xml
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\bin\Debug\Newtonsoft.Json.xml
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.csprojResolveAssemblyReference.cache
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.dll
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.Migrations.InitialMigration.resources
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.csproj.GenerateResource.Cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.DAL\obj\Debug\MagazineApp.DAL.pdb
