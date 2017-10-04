@@ -243,6 +243,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\UsersViewModels\UserDetailsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UsersListViewModel.cs" />
     <Compile Include="Areas\Admin\Models\UsersViewModels\UserViewModel.cs" />
     <Compile Include="Areas\Journalist\Controllers\ArticlesController.cs" />
@@ -288,7 +289,6 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Journalist\Views\web.config" />
     <Content Include="Areas\Reader\Views\web.config" />
-    <Content Include="Areas\Account\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Account\Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ForgotPasswordConfirmation.cshtml" />
@@ -296,10 +296,8 @@
     <Content Include="Areas\Account\Views\Account\Register.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPassword.cshtml" />
     <Content Include="Areas\Account\Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Detail.cshtml" />
-    <Content Include="Areas\Journalist\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\Index.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\_MagazineFilterPartialView.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\Details.cshtml" />
@@ -313,7 +311,6 @@
     <Content Include="Areas\Journalist\Views\Articles\Blank.cshtml" />
     <Content Include="Areas\Journalist\Views\Articles\_ArticleFilterPartialView.cshtml" />
     <Content Include="Areas\Journalist\Views\Pictures\Edit.cshtml" />
-    <Content Include="Areas\Reader\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Journalist\Views\Home\Index.cshtml" />
     <Content Include="Areas\Reader\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -346,8 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Journalist\Views\Shared\" />
     <Folder Include="Areas\Reader\Models\" />
     <Folder Include="Areas\Reader\Views\Articles\" />
+    <Folder Include="Areas\Reader\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -31,6 +31,10 @@ namespace MagazineApp.Web.Mappings {
 
             CreateMap<User, Areas.Admin.Models.UsersViewModels.UserViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<Areas.Admin.Models.UsersViewModels.UserViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<UserDto, Areas.Admin.Models.UsersViewModels.UserViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<Areas.Admin.Models.UsersViewModels.UserViewModel, UserDto>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<UserDto, Areas.Admin.Models.UsersViewModels.UserDetailsViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<Areas.Admin.Models.UsersViewModels.UserDetailsViewModel, UserDto>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
 
             #endregion
 
@@ -45,6 +49,7 @@ namespace MagazineApp.Web.Mappings {
             CreateMap<PictureViewModel, Picture>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<User, UserViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<UserViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            
 
 
             #endregion

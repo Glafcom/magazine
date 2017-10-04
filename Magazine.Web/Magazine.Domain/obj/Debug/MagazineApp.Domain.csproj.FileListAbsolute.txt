@@ -11,3 +11,4 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache

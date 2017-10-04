@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Users</h2>
@@ -33,7 +33,7 @@
                         <td class="user-status-cell" data-user-id="@user.Id">@((user.IsBlocked) ? BlockedStatus : ActiveStatus)</td>
                         <td>@user.UserName</td>
                         <td>@($"{user.Name} {user.Surname}")</td>
-                        <td>@user.Role.ToString()</td>
+                        <td>@user.Role</td>
                         <td>@user.Email</td>
                         <td>
                             <a href="@Url.Action("Detail", "Users", new { id = user.Id })" class="btn btn-default">Details</a>

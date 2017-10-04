@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MagazineApp.Contracts.BLLContracts.Services;
+using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities.Identity;
 using MagazineApp.Domain.Enums;
 using MagazineApp.Domain.Filters;
@@ -35,15 +36,20 @@ namespace MagazineApp.Web.Areas.Admin.Controllers
 
         public ActionResult Detail(Guid id) {
             var user = _userService.GetItem(id);
-            var model = Mapper.Map<UserViewModel>(user);
-
+            var model = Mapper.Map<UserDetailsViewModel>(user);
+            model.UserTypesList = Enum.GetValues(typeof(UserType))
+                .Cast<UserType>()
+                .Select(ut => new SelectListItem {
+                    Text = ut.ToString(),
+                    Value = ut.ToString()
+                }).ToList();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Save(UserViewModel model) {
-            var user = Mapper.Map<User>(model);
-            _userService.ChangeItem(user.Id, user);
+        public ActionResult Save(UserDetailsViewModel model) {
+            var userDto = Mapper.Map<UserDto>(model);
+            _userService.UpdateUser(userDto);
 
             return RedirectToAction("Index");
         }

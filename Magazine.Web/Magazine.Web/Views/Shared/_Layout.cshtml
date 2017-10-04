@@ -6,6 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -16,14 +18,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("MagazineApp", "Index", "Home", new { area = "Admin" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @if (User.IsInRole("Admin")) {
+                        <li>@Html.ActionLink("Users", "Index", "Users", new { area = "Admin" })</li>
+                    }
+                    @if (User.IsInRole("Journalist") || User.IsInRole("Editor")) {
+                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { area = "Journalist" } )</li>
+                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Journalist" })</li>
+                        <li>@Html.ActionLink("Pictures", "Index", "Pictures", new { area = "Journalist" })</li>
+                    }
+                    @if (!User.IsInRole("Admin") && !User.IsInRole("Journalist") && !User.IsInRole("Editor")) {
+                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { area = "Reader" })</li>
+                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Reader" })</li>
+                    }
+
                 </ul>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -31,12 +44,8 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>MagazineApp</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
 </html>

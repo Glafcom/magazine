@@ -12,6 +12,6 @@ namespace MagazineApp.Web.Areas.Admin.Models.UsersViewModels {
         public string Surname { get; set; }
         public string Email { get; set; }
         public bool IsBlocked { get; set; }
-        public UserType Role { get; set; }
+        public string Role { get; set; }
     }
 }

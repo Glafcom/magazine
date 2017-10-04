@@ -1,9 +1,9 @@
 ﻿@using MagazineApp.Web.Areas.Admin.Models.UsersViewModels;
-@model UserViewModel
+@model UserDetailsViewModel
 
 @{
     ViewBag.Title = "Detail";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>User Detail</h2>
@@ -50,7 +50,7 @@
     <div class="form-group row">
         @Html.LabelFor(m => m.Role, new { @class = "control-label col-md-1" })
         <div class="col-md-4">
-            @Html.EnumDropDownListFor(m => m.Role, new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.Role, Model.UserTypesList, new { @class = "form-control" })
         </div>
     </div>
 
