@@ -2,6 +2,8 @@
 using MagazineApp.Contracts.BLLContracts.Services;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Filters;
+using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
+using MagazineApp.Web.Helpers;
 using MagazineApp.Web.Models.MagazinesViewModels;
 using System;
 using System.Collections.Generic;
@@ -48,7 +50,10 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(MagazineViewModel model) {
+        public ActionResult Create(BlankMagazineViewModel model) {
+            if (model.MainPictureFile != null) {
+                model.MainPicture = FileHelper.SetUploadedFileToBytes(model.MainPictureFile);
+            }
             _magazineService.AddItem(Mapper.Map<Magazine>(model));
             return RedirectToAction("Index");
         }
@@ -61,7 +66,10 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(MagazineViewModel model) {
+        public ActionResult Edit(BlankMagazineViewModel model) {
+            if (model.MainPictureFile != null) {
+                model.MainPicture = FileHelper.SetUploadedFileToBytes(model.MainPictureFile);
+            }
             var magazine = Mapper.Map<Magazine>(model);
             _magazineService.ChangeItem(magazine.Id, magazine);
             return RedirectToAction("Index");

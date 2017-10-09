@@ -13,11 +13,9 @@ namespace MagazineApp.Web.Areas.Reader.Controllers
     public class ArticlesController : Controller
     {
         protected readonly IArticleService _articleService;
-        protected readonly IPictureService _pictureService;
 
-        public ArticlesController(IArticleService articleService, IPictureService pictureService) {
+        public ArticlesController(IArticleService articleService) {
             _articleService = articleService;
-            _pictureService = pictureService;
         }
 
         // GET: Journalist/Articles

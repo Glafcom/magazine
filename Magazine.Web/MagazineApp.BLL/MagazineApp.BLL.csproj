@@ -99,7 +99,6 @@
     <Compile Include="Services\ArticleService.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\MagazineService.cs" />
-    <Compile Include="Services\PictureService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>

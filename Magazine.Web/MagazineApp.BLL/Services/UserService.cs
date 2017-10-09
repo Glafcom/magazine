@@ -82,13 +82,19 @@ namespace MagazineApp.BLL.Services {
         public async Task SetRoleToUser(Guid id, string role) {
             var roles = await _userManager.GetRolesAsync(id);
             await _userManager.RemoveFromRolesAsync(id, roles.ToArray());
-            await _userManager.AddToRoleAsync(id, role);
+            if (role != UserType.None.ToString())
+                await _userManager.AddToRoleAsync(id, role);
         }
 
         public async Task UpdateUser(UserDto userDto) {
             var user = Mapper.Map<User>(userDto);
             ChangeItem(user.Id, user);
             await SetRoleToUser(user.Id, userDto.Role);
+        }
+
+        public Role GetUsersRole(Guid id) {
+            var user = GetItem(id);
+            return user.Roles.FirstOrDefault()?.Role;
         }
 
         private void ChangeUserStatus(Guid userId, bool isBlocked) {

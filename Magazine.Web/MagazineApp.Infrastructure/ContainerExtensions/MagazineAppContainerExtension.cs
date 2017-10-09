@@ -27,7 +27,6 @@ namespace MagazineApp.Infrastructure.ContainerExtensions {
             Container.RegisterType<IAccountService, AccountService>(new PerRequestLifetimeManager());
             Container.RegisterType<IArticleService, ArticleService>(new PerRequestLifetimeManager());
             Container.RegisterType<IMagazineService, MagazineService>(new PerRequestLifetimeManager());
-            Container.RegisterType<IPictureService, PictureService>(new PerRequestLifetimeManager());
             Container.RegisterType<IUserService, UserService>(new PerRequestLifetimeManager());
             Container.RegisterType<IUserStore<User,Guid>, ApplicationUserStore>(new PerRequestLifetimeManager());
             Container.RegisterType<IAuthenticationManager>(new PerRequestLifetimeManager(), new InjectionFactory(o => System.Web.HttpContext.Current.GetOwinContext().Authentication));
@@ -45,8 +44,7 @@ namespace MagazineApp.Infrastructure.ContainerExtensions {
 
             Container.RegisterType<IGenericRepository<User>, GenericRepository<User>>(new PerRequestLifetimeManager());
             Container.RegisterType<IGenericRepository<Article>, GenericRepository<Article>>(new PerRequestLifetimeManager());
-            Container.RegisterType<IGenericRepository<Magazine>, GenericRepository<Magazine>>(new PerRequestLifetimeManager());
-            Container.RegisterType<IGenericRepository<Picture>, GenericRepository<Picture>>(new PerRequestLifetimeManager());
+            Container.RegisterType<IGenericRepository<Magazine>, GenericRepository<Magazine>>(new PerRequestLifetimeManager());            
             Container.RegisterType<IGenericRepository<Role>, GenericRepository<Role>>(new PerRequestLifetimeManager());
 
             #endregion

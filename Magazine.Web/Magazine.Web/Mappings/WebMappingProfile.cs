@@ -6,7 +6,6 @@ using MagazineApp.Domain.Entities.Identity;
 using MagazineApp.Web.Areas.Account.Models;
 using MagazineApp.Web.Models.ArticlesViewModels;
 using MagazineApp.Web.Models.MagazinesViewModels;
-using MagazineApp.Web.Models.PicturesViewModels;
 using MagazineApp.Web.Models.UsersViewModels;
 using System;
 using System.Collections.Generic;
@@ -35,6 +34,8 @@ namespace MagazineApp.Web.Mappings {
             CreateMap<Areas.Admin.Models.UsersViewModels.UserViewModel, UserDto>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<UserDto, Areas.Admin.Models.UsersViewModels.UserDetailsViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<Areas.Admin.Models.UsersViewModels.UserDetailsViewModel, UserDto>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<User, Areas.Admin.Models.UsersViewModels.UserDetailsViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<Areas.Admin.Models.UsersViewModels.UserDetailsViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
 
             #endregion
 
@@ -45,8 +46,6 @@ namespace MagazineApp.Web.Mappings {
             CreateMap<ArticleViewModel, Article>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<Magazine, MagazineViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<MagazineViewModel, Magazine>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
-            CreateMap<Picture, PictureViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
-            CreateMap<PictureViewModel, Picture>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<User, UserViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<UserViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             

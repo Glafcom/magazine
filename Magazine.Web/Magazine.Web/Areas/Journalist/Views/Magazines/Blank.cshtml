@@ -20,12 +20,13 @@
 <div class="container magazine-container">
     @using (Html.BeginForm(action, "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
         @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.MainPicture)
         <h2>@caption</h2>
         <hr />
         
         <div class="form-group">
-            @Html.LabelFor(m => m.MainPictureId, new { @class = "col-md-2 control-label" })
-            
+            <label class="control-label">Select main picture for magazine</label>
+            <input id="MainPictureFile" name="MainPictureFile" type="file" class="file-loading" accept="image/*">
         </div>
 
         <h3>Articles</h3>
@@ -46,7 +47,7 @@
                     @foreach(var article in Model.Articles) {
                         <tr>
                             <td>
-                                <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture.Content)) : "#")" class="file-preview-image" title="@(article.MainPicture?.Name ?? string.Empty)">
+                                <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
                             </td>
                             <td>@article.Caption</td>
                             <td>@article.ShortText</td>
@@ -65,4 +66,35 @@
         </div>
     }
 </div>
+
+<script>
+
+
+    $(document).on('ready', function () {
+        @((Model.MainPicture != null && Model.MainPicture.Length > 0) ? "setFilledUploader();" : "setEmptyUploader();")
+    });
+
+    function setEmptyUploader() {
+        $("#MainPictureFile").fileinput({
+            showCaption: false,
+            showUpload: false,
+        });
+    }
+
+    function setFilledUploader() {
+        $("#MainFile").fileinput({
+            showCaption: false,
+            showUpload: false,
+            initialPreview: [
+                '<img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture)) : "#")" class="file-preview-image" alt="Main Picture" title="Main Picture">'
+            ]
+        });
+    }
+
+    $('#MainPictureFile').on('filecleared', function (event) {
+        $('#MainPicture').val("");
+    });
+
+
+</script>
 

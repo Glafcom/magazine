@@ -8,6 +8,7 @@ using MagazineApp.Web.Areas.Admin.Models.UsersViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -36,7 +37,9 @@ namespace MagazineApp.Web.Areas.Admin.Controllers
 
         public ActionResult Detail(Guid id) {
             var user = _userService.GetItem(id);
+            var userRole = _userService.GetUsersRole(id);
             var model = Mapper.Map<UserDetailsViewModel>(user);
+            model.Role = userRole?.Name ?? string.Empty;
             model.UserTypesList = Enum.GetValues(typeof(UserType))
                 .Cast<UserType>()
                 .Select(ut => new SelectListItem {
@@ -47,9 +50,9 @@ namespace MagazineApp.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(UserDetailsViewModel model) {
+        public async Task<ActionResult> Save(UserDetailsViewModel model) {
             var userDto = Mapper.Map<UserDto>(model);
-            _userService.UpdateUser(userDto);
+            await _userService.UpdateUser(userDto);
 
             return RedirectToAction("Index");
         }

@@ -3,6 +3,7 @@ using MagazineApp.Contracts.BLLContracts.Services;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Filters;
 using MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels;
+using MagazineApp.Web.Helpers;
 using MagazineApp.Web.Models.ArticlesViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,9 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
     public class ArticlesController : Controller
     {
         protected readonly IArticleService _articleService;
-        protected readonly IPictureService _pictureService;
 
-        public ArticlesController(IArticleService articleService, IPictureService pictureService) {
+        public ArticlesController(IArticleService articleService) {
             _articleService = articleService;
-            _pictureService = pictureService;
         }
 
         // GET: Journalist/Articles
@@ -59,7 +58,10 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
         }
 
         [HttpPost]
-        public ActionResult Save(ArticleViewModel model) {
+        public ActionResult Save(BlankArticleViewModel model) {
+            if (model.MainPictureFile != null) {
+                model.MainPicture = FileHelper.SetUploadedFileToBytes(model.MainPictureFile);
+            }
             var article = Mapper.Map<Article>(model);
             if (article.Id == Guid.Empty) {
                 _articleService.AddItem(article);

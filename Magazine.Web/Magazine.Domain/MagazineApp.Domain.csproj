@@ -65,7 +65,6 @@
     <Compile Include="Entities\Identity\UserLogin.cs" />
     <Compile Include="Entities\Identity\UserRole.cs" />
     <Compile Include="Entities\Magazine.cs" />
-    <Compile Include="Entities\Picture.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="Filters\ArticleFilter.cs" />

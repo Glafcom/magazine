@@ -89,7 +89,6 @@
     <Compile Include="BLLContracts\Services\IArticleService.cs" />
     <Compile Include="BLLContracts\Services\IBaseService.cs" />
     <Compile Include="BLLContracts\Services\IMagazineService.cs" />
-    <Compile Include="BLLContracts\Services\IPictureService.cs" />
     <Compile Include="BLLContracts\Services\IUserService.cs" />
     <Compile Include="DALContracts\Identity\IApplicationSignInManager.cs" />
     <Compile Include="DALContracts\Identity\IApplicationUserManager.cs" />

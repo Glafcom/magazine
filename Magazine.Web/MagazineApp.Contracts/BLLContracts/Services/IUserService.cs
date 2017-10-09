@@ -17,5 +17,6 @@ namespace MagazineApp.Contracts.BLLContracts.Services {
         Task SetRoleToUser(Guid userId, UserType userType);
         Task SetRoleToUser(Guid userId, string role);
         Task UpdateUser(UserDto userDto);
+        Role GetUsersRole(Guid id);
     }
 }

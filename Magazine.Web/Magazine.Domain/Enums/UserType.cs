@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MagazineApp.Domain.Enums {
     public enum UserType {
+        None,
         Admin,
         Journalist,
         Editor

@@ -23,7 +23,6 @@ namespace MagazineApp.DAL.AppDbContext {
 
         public DbSet<Article> Articles { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
-        public DbSet<Picture> Pictures { get; set; }
 
         public static MagazineAppDbContext Create() {
             return new MagazineAppDbContext();

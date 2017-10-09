@@ -27,7 +27,7 @@
                 @foreach(var article in Model.Articles) {
                     <tr>
                         <td>
-                            <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture.Content)) : "#")" class="file-preview-image" title="@(article.MainPicture?.Name ?? string.Empty)">
+                            <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
                         </td>
                         <td>@article.Caption</td>
                         <td>@article.ShortText</td>
