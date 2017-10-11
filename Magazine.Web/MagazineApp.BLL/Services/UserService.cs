@@ -87,7 +87,8 @@ namespace MagazineApp.BLL.Services {
         }
 
         public async Task UpdateUser(UserDto userDto) {
-            var user = Mapper.Map<User>(userDto);
+            var user = GetItem(userDto.Id);
+            Map(userDto, user);
             ChangeItem(user.Id, user);
             await SetRoleToUser(user.Id, userDto.Role);
         }
@@ -101,6 +102,13 @@ namespace MagazineApp.BLL.Services {
             var user = _itemRepository.GetByID(userId);
             user.IsBlocked = isBlocked;
             ChangeItem(userId, user);
+        }
+
+        private void Map(UserDto sourceUser, User targetUser) {
+            targetUser.IsBlocked = sourceUser.IsBlocked;
+            targetUser.Name = sourceUser.Name;
+            targetUser.Surname = sourceUser.Surname;
+            targetUser.Email = sourceUser.Email;
         }
     }
 }

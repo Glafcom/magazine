@@ -271,6 +271,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.css" />
+    <Content Include="Content\bootstrap-fileinput\css\fileinput.min.css" />
+    <Content Include="Content\bootstrap-fileinput\image\loading-sm.gif" />
+    <Content Include="Content\bootstrap-fileinput\image\loading.gif" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -311,6 +315,7 @@
     <Content Include="Areas\Reader\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\fileinput.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

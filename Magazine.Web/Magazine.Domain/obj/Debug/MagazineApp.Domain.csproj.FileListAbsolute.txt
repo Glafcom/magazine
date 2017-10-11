@@ -12,3 +12,17 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\maga
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.pdb
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll.config
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.pdb
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.xml
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.dll
+C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.pdb

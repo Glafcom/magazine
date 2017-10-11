@@ -27,14 +27,14 @@
                 </thead>
                 <tbody>
                     @foreach (var magazine in Model.Magazines) {
-                        @{
+                        
                             var isPublished = magazine.IsPublished.HasValue && magazine.IsPublished.Value;
                             var publisher = isPublished ? $"{magazine.Publisher.Name} {magazine.Publisher.Surname}" : string.Empty;
-                        }
+                        
                             <tr>
                                 <td>@magazine.Number</td>
                                 <td>
-                                    <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture.Content)) : "#")" class="file-preview-image" title="@(magazine.MainPicture?.Name ?? string.Empty)">
+                                    <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture)) : "#")" class="file-preview-image">
                                 </td>
                                 <td>@(isPublished ? "Published" : "Not published")</td>
                                 <td>@(isPublished ? magazine.PublishDate.Value.ToString("dd-MM-yyyy") : string.Empty)</td>
@@ -43,10 +43,10 @@
                                     <button class="btn btn-default publish-button">Publish</button>
                                     <button class="btn btn-default unpublish-button">Unpublish</button>
                                 </td>
-                                <td><a href="@Url.Action("Details", "Magazines", new { id = magazine.Id })" class="btn btn-default">Details</a></td>
-                                <td><a href="@Url.Action("Edit", "Magazines", new { id = magazine.Id })" class="btn btn-default">Edit</a></td>
+                                <td><a href="@Url.Action("Details", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Details</a></td>
+                                <td><a href="@Url.Action("Edit", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Edit</a></td>
                                 <td>
-                                    <a href="@Url.Action("Delete", "Magazines", new { id = magazine.Id })" class="btn btn-default">Delete</a>
+                                    <a href="@Url.Action("Delete", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Delete</a>
                                 </td>
                             </tr>
                             }
@@ -56,7 +56,7 @@
                             else {
                                 <p>There are no magazines</p>
                             }
-        <a href="@Url.Action("Create", "Magazines")" class="btn btn-default pull-right">Add</a>
+        <a href="@Url.Action("Create", "Magazines", new { area = "Journalist"})" class="btn btn-default pull-right">Add</a>
 
     </div>
 </div>

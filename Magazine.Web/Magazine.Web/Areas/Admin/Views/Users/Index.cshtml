@@ -47,7 +47,7 @@
                                     <button class="btn btn-default user-block-btn" data-user-id="@user.Id" hidden="@(user.IsBlocked)">Block</button>
                                 </div>
                                 <div class="delete-btn-container col-md-5" hidden="@(!user.IsBlocked)">
-                                    <a href="@Url.Action("DeleteUser", "Users", new { userId = user.Id })" class="btn btn-danger" data-user-id="@user.Id">Delete</a>
+                                    <a href="@Url.Action("Delete", "Users", new { id = user.Id })" class="btn btn-danger" data-user-id="@user.Id">Delete</a>
                                 </div>
                             </div>
                         </td>

@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -26,13 +27,12 @@
                         <li>@Html.ActionLink("Users", "Index", "Users", new { }, new { area = "Admin" })</li>
                     }
                     @if (User.IsInRole("Journalist") || User.IsInRole("Editor")) {
-                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { area = "Journalist" } )</li>
-                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Journalist" })</li>
-                        <li>@Html.ActionLink("Pictures", "Index", "Pictures", new { area = "Journalist" })</li>
+                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { }, new { area = "Journalist" } )</li>
+                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { }, new { area = "Journalist" })</li>
                     }
                     @if (!User.IsInRole("Admin") && !User.IsInRole("Journalist") && !User.IsInRole("Editor")) {
-                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { area = "Reader" })</li>
-                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Reader" })</li>
+                        <li>@Html.ActionLink("Magazines", "Index", "Magazines", new { }, new { area = "Reader" })</li>
+                        <li>@Html.ActionLink("Articles", "Index", "Articles", new { }, new { area = "Reader" })</li>
                     }
 
                 </ul>
@@ -47,5 +47,8 @@
             <p>MagazineApp</p>
         </footer>
     </div>
+
+    <script src="~/Scripts/fileinput.min.js"></script>
+
 </body>
 </html>
