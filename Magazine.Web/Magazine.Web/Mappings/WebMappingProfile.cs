@@ -4,6 +4,7 @@ using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Entities.Identity;
 using MagazineApp.Web.Areas.Account.Models;
+using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
 using MagazineApp.Web.Models.ArticlesViewModels;
 using MagazineApp.Web.Models.MagazinesViewModels;
 using MagazineApp.Web.Models.UsersViewModels;
@@ -36,6 +37,13 @@ namespace MagazineApp.Web.Mappings {
             CreateMap<Areas.Admin.Models.UsersViewModels.UserDetailsViewModel, UserDto>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<User, Areas.Admin.Models.UsersViewModels.UserDetailsViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<Areas.Admin.Models.UsersViewModels.UserDetailsViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+
+            #endregion
+
+            #region [ Journalist Models ]
+
+            CreateMap<Magazine, BlankMagazineViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<BlankMagazineViewModel, Magazine>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
 
             #endregion
 

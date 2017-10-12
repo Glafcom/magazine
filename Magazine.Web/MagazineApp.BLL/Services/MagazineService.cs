@@ -38,6 +38,17 @@ namespace MagazineApp.BLL.Services {
             return magazines.ToList();
         }
 
+        public override Magazine AddItem(Magazine item) {
+            var lastNumber = 0;
+            var magazines = _itemRepository.Get();
+            if (magazines != null & magazines.Count() > 0) {
+                lastNumber = magazines.Max(m => m.Number);
+            }
 
-}
+            item.Number = ++lastNumber;
+            return base.AddItem(item);
+        }
+
+
+    }
 }

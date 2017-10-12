@@ -41,7 +41,9 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
 
         [HttpGet]
         public ActionResult Create() {
-            var model = new ArticleViewModel { };
+            var model = new BlankArticleViewModel {
+                IsNew = true;
+            };
             return View(model);
         }
 

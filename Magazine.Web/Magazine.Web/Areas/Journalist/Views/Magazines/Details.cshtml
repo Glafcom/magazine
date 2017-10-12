@@ -11,18 +11,18 @@
 <div class="magazine-container">
     <div class="row">
         <div class="col-md-4 main-picture">
-            <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture.Content)) : "#")" class="file-preview-image" title="@(Model.MainPicture?.Name ?? string.Empty)">
+            <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture)) : "#")" class="file-preview-image">
         </div>
     </div>
     <div class="col-md-8 articles-list">
         @foreach(var article in Model.Articles) {
             <div class="row article-row">
                 <div class="col-md-4 article-picture-container">
-                    <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture.Content)) : "#")" class="file-preview-image" title="@(article.MainPicture?.Name ?? string.Empty)">
+                    <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
                 </div>
                 <div class="col-md-8">
                     <div class="row">
-                        @Html.ActionLink(article.Caption, "Details", "Articles", new { id = article.Id })
+                        @Html.ActionLink(article.Caption, "Details", "Articles", new { id = article.Id, area = "Journalist" })
                     </div>
                     <div class="row">
                         <span>@article.ShortText</span>

@@ -46,6 +46,7 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         [HttpGet]
         public ActionResult Create() {
             var model = new BlankMagazineViewModel();
+            model.IsNew = true;
             return View("~/Areas/Journalist/Views/Magazines/Blank.cshtml", model);
         }
 
@@ -61,8 +62,9 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         [HttpGet]
         public ActionResult Edit(Guid id) {
             var magazine = _magazineService.GetItem(id);
-            var model = Mapper.Map<MagazineViewModel>(magazine);
-            return View(model);
+            var model = Mapper.Map<BlankMagazineViewModel>(magazine);
+            model.IsNew = false;
+            return View("~/Areas/Journalist/Views/Magazines/Blank.cshtml", model);
         }
 
         [HttpPost]

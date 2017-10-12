@@ -21,9 +21,11 @@
 
 
 <div class="container magazine-container">
-    @using (Html.BeginForm(action, "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+    @using (Html.BeginForm(action, "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form", @enctype = "multipart/form-data" })) {
         @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
         @Html.HiddenFor(m => m.MainPicture)
+        @Html.HiddenFor(m => m.Number)
         <h2>@caption</h2>
         <hr />
 
@@ -102,7 +104,7 @@
     }
 
     function setFilledUploader() {
-        $("#MainFile").fileinput({
+        $("#MainPictureFile").fileinput({
             showCaption: false,
             showUpload: false,
             initialPreview: [

@@ -7,6 +7,7 @@ using System.Web;
 
 namespace MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels {
     public class BlankMagazineViewModel {
+        public Guid Id { get; set; }
         public bool IsNew { get; set; }
         public int Number { get; set; }
         public byte[] MainPicture { get; set; }
