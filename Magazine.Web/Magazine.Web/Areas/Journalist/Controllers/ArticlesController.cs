@@ -42,21 +42,17 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
         [HttpGet]
         public ActionResult Create() {
             var model = new BlankArticleViewModel {
-                IsNew = true;
+                IsNew = true
             };
-            return View(model);
-        }
-
-        [HttpGet]
-        public ActionResult Create(ArticleViewModel model) {
-            return View(model);
+            return View("Blank", model);
         }
 
         [HttpGet]
         public ActionResult Edit(Guid id) {
             var article = _articleService.GetItem(id);
-            var model = Mapper.Map<ArticleViewModel>(article);
-            return View(model);
+            var model = Mapper.Map<BlankArticleViewModel>(article);
+            model.IsNew = false;
+            return View("Blank", model);
         }
 
         [HttpPost]
@@ -65,7 +61,7 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
                 model.MainPicture = FileHelper.SetUploadedFileToBytes(model.MainPictureFile);
             }
             var article = Mapper.Map<Article>(model);
-            if (article.Id == Guid.Empty) {
+            if (model.IsNew) {
                 _articleService.AddItem(article);
             }
             else {

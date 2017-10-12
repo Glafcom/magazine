@@ -31,12 +31,12 @@
                         </td>
                         <td>@article.Caption</td>
                         <td>@article.ShortText</td>
-                        <td>@article.CreateDate.ToString("dd.MM.yyyy")</td>
+                        <td>@article.CreateDate.ToString("dd.MM.yyyy hh:mm:ss")</td>
                         <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
-                        <td><a href="@Url.Action("Details", "Articles", new { id = article.Id })" class="btn btn-default">Details</a></td>
-                        <td><a href="@Url.Action("Edit", "Articles", new { id = article.Id })" class="btn btn-default">Edit</a></td>
+                        <td><a href="@Url.Action("Details", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Details</a></td>
+                        <td><a href="@Url.Action("Edit", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Edit</a></td>
                         <td>
-                            <a href="@Url.Action("Delete", "Articles", new { id = article.Id })" class="btn btn-default">Delete</a>
+                            <a href="@Url.Action("Delete", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Delete</a>
                         </td>
                     </tr>
                 }
@@ -47,7 +47,7 @@
         <p>There are no articles</p>
     }
 
-    <a href="@Url.Action("Create", "Articles")" class="btn btn-default pull-right">Add</a>
+    <a href="@Url.Action("Create", "Articles", new { area = "Journalist" })" class="btn btn-default pull-right">Add</a>
 
 </div>
 

@@ -9,7 +9,7 @@
 <h2>@Model.Caption</h2>
 
 <div class="article-picture">
-    <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture.Content)) : "#")" class="file-preview-image" title="@(Model.MainPicture?.Name ?? string.Empty)">
+    <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture)) : "#")" class="file-preview-image" title="@Model.Caption">
 </div>
 
 
@@ -31,4 +31,4 @@
     </div>
 </div>
 
-<a href="@Url.Action("Index", "Articles")" class="btn btn-default">Back</a>
+<a href="@Url.Action("Index", "Articles", new { area = "Journalist" })" class="btn btn-default">Back</a>

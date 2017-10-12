@@ -5,14 +5,20 @@ using MagazineApp.Domain.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MagazineApp.BLL.Services {
     public class ArticleService : BaseService<Article>, IArticleService {
 
-        public ArticleService(IGenericRepository<Article> itemRepository)
-            : base(itemRepository) { }
+        protected readonly IUserService _userService;
+
+        public ArticleService(IGenericRepository<Article> itemRepository, IUserService userService)
+            : base(itemRepository) {
+            _userService = userService;
+        }
 
         public List<Article> GetArticlesByFilter(ArticleFilter filter) {
             var articles = GetItems();
@@ -30,6 +36,30 @@ namespace MagazineApp.BLL.Services {
                 articles = articles.Where(a => a.CreateDate <= filter.CreateDateTo);
 
             return articles.ToList();
+        }
+
+        public override Article AddItem(Article item) {
+            try {
+                item.CreateDate = DateTime.UtcNow;
+                item.AuthorId = _userService.GetCurrentUserId().Value;
+                return base.AddItem(item);
+            }
+            catch (Exception ex) {
+                return null;
+            }
+        }
+
+        public override void ChangeItem(Guid itemId, Article item) {
+            var article = GetItem(itemId);
+            Map(item, article);
+            base.ChangeItem(itemId, article);
+        }
+
+        private void Map(Article sourceArticle, Article targetArticle) {
+            targetArticle.Caption = sourceArticle.Caption;
+            targetArticle.ShortText = sourceArticle.ShortText;
+            targetArticle.LongText = sourceArticle.LongText;
+            targetArticle.MainPicture = sourceArticle.MainPicture;
         }
 
     }

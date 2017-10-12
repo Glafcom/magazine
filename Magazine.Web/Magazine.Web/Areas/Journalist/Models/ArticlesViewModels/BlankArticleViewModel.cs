@@ -6,6 +6,7 @@ using System.Web;
 
 namespace MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels {
     public class BlankArticleViewModel {
+        public Guid Id { get; set; }
         public bool IsNew { get; set; }
         public string Caption { get; set; }
         public string ShortText { get; set; }

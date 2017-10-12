@@ -4,6 +4,7 @@ using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Filters;
 using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
 using MagazineApp.Web.Helpers;
+using MagazineApp.Web.Models.ArticlesViewModels;
 using MagazineApp.Web.Models.MagazinesViewModels;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
     public class MagazinesController : Controller
     {
         protected readonly IMagazineService _magazineService;
+        protected readonly IArticleService _articleService;
 
 
-        public MagazinesController(IMagazineService magazineService) {
+        public MagazinesController(IMagazineService magazineService, IArticleService articleService) {
             _magazineService = magazineService;
+            _articleService = articleService;
         }
 
         // GET: Journalist/Magazines
@@ -81,6 +84,23 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         public ActionResult Delete(Guid id) {
             _magazineService.DeleteItem(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ArticlesList(ArticleFilter filter) {
+            var articles = _articleService.GetArticlesByFilter(filter);
+            var model = new ArticlesListViewModel {
+                Filter = filter,
+                Articles = articles
+                    .Select(a => Mapper.Map<ArticleViewModel>(a))
+                    .ToList()
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddArticles(List<Guid> articleIds) {
+
         }
     }
 }

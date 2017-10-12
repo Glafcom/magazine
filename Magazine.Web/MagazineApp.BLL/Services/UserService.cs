@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MagazineApp.BLL.Services {
@@ -85,7 +86,7 @@ namespace MagazineApp.BLL.Services {
             if (role != UserType.None.ToString())
                 await _userManager.AddToRoleAsync(id, role);
         }
-
+        
         public async Task UpdateUser(UserDto userDto) {
             var user = GetItem(userDto.Id);
             Map(userDto, user);
@@ -96,6 +97,19 @@ namespace MagazineApp.BLL.Services {
         public Role GetUsersRole(Guid id) {
             var user = GetItem(id);
             return user.Roles.FirstOrDefault()?.Role;
+        }
+
+        public Guid? GetCurrentUserId() {
+            var user = GetCurrentUser();
+            if (user != null)
+                return user.Id;
+
+            return null;
+        }
+
+        public User GetCurrentUser() {
+            var userName = Thread.CurrentPrincipal.Identity.Name;
+            return _itemRepository.Get().Where(u => u.UserName == userName).FirstOrDefault();
         }
 
         private void ChangeUserStatus(Guid userId, bool isBlocked) {
