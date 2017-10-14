@@ -8,6 +8,8 @@
 
 <h2>Articles</h2>
 
+@Html.Partial("_ArticleFilterPartialView", Model.Filter)
+
 <div class="container articles-container">
     @if (Model.Articles != null && Model.Articles.Count() > 0) {
         <table class="table table-bordered">

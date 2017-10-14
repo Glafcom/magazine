@@ -1,1 +1,54 @@
-﻿
+﻿@using MagazineApp.Web.Models.Filters;
+@model MagazineFilterViewModel
+
+    <div class="magazine-filter-container container">
+        @using (Html.BeginForm("Index", "Magazines", FormMethod.Get, new { @class = "form" })) {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Number, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.Number, Model.MagazineNumbersList, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Publisher, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.Publisher, Model.JournalistsList, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PublishDateFrom, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.PublishDateFrom, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.PublishDateTo, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.PublishDateTo, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ArticleCaption, new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.ArticleCaption, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ArticleAuthor, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.ArticleAuthor, Model.JournalistsList, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info form-control" value="Filter" />
+                </div>
+            </div>
+        }
+    </div>

@@ -112,6 +112,10 @@ namespace MagazineApp.BLL.Services {
             return _itemRepository.Get().Where(u => u.UserName == userName).FirstOrDefault();
         }
 
+        public List<User> GetJournalistsList() {
+            return _itemRepository.Get().Where(u => u.Roles.Where(r => r.Role.Name == "Journalist").Any()).ToList();
+        }
+
         private void ChangeUserStatus(Guid userId, bool isBlocked) {
             var user = _itemRepository.GetByID(userId);
             user.IsBlocked = isBlocked;

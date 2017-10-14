@@ -20,5 +20,6 @@ namespace MagazineApp.Contracts.BLLContracts.Services {
         Role GetUsersRole(Guid id);
         Guid? GetCurrentUserId();
         User GetCurrentUser();
+        List<User> GetJournalistsList();
     }
 }

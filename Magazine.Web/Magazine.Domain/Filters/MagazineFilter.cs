@@ -12,5 +12,6 @@ namespace MagazineApp.Domain.Filters {
         public Guid? Publisher { get; set; }
         public string ArticleCaption { get; set; }
         public Guid? ArticleAuthor { get; set; }
+        public bool IsPublished { get; set; }
     }
 }

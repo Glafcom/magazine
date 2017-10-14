@@ -1,1 +1,41 @@
-﻿
+﻿@using MagazineApp.Web.Models.Filters;
+@model ArticleFilterViewModel
+
+<div class="magazine-filter-container container">
+    @using (Html.BeginForm("Index", "Articles", FormMethod.Get, new { @class = "form" })) {
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Caption, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Caption, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Author, new { @class = "control-label" })
+                    @Html.DropDownListFor(m => m.Author, Model.JournalistsList, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CreateDateFrom, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.CreateDateFrom, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CreateDateTo, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.CreateDateTo, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <input type="submit" class="btn btn-info form-control" value="Filter"/>
+            </div>
+        </div>
+    }
+</div>
+

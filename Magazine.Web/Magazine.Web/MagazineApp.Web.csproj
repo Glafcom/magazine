@@ -264,6 +264,8 @@
     <Compile Include="Mappings\WebMappingProfile.cs" />
     <Compile Include="Models\ArticlesViewModels\ArticlesListViewModel.cs" />
     <Compile Include="Models\ArticlesViewModels\ArticleViewModel.cs" />
+    <Compile Include="Models\Filters\ArticleFilterViewModel.cs" />
+    <Compile Include="Models\Filters\MagazineFilterViewModel.cs" />
     <Compile Include="Models\MagazinesViewModels\MagazinesListViewModel.cs" />
     <Compile Include="Models\MagazinesViewModels\MagazineViewModel.cs" />
     <Compile Include="Models\UsersViewModels\UserViewModel.cs" />

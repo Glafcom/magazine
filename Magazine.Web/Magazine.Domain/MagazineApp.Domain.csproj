@@ -69,7 +69,6 @@
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="Filters\ArticleFilter.cs" />
     <Compile Include="Filters\MagazineFilter.cs" />
-    <Compile Include="Filters\PictureFilter.cs" />
     <Compile Include="Filters\UserFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

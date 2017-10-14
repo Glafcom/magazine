@@ -49,6 +49,10 @@ namespace MagazineApp.BLL.Services {
             return base.AddItem(item);
         }
 
+        public List<int> GetCurrentMagazineNumbers() {
+
+        }
+
 
     }
 }

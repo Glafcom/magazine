@@ -8,6 +8,8 @@
 
 <h2>Magazines</h2>
 
+@Html.Partial("_MagazineFilterPartialView", Model.Filter)
+
 <div class="magazines-container container">
     <div class="magazines-table">
         @if (Model.Magazines != null && Model.Magazines.Count() > 0) {
