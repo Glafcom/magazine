@@ -50,7 +50,7 @@ namespace MagazineApp.BLL.Services {
         }
 
         public List<int> GetCurrentMagazineNumbers() {
-
+            return GetItems().Select(m => m.Number).ToList();
         }
 
 

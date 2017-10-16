@@ -307,7 +307,6 @@
     <Content Include="Areas\Reader\Views\Magazines\_MagazineFilterPartialView.cshtml" />
     <Content Include="Areas\Reader\Views\Magazines\Details.cshtml" />
     <Content Include="Areas\Reader\Views\Magazines\Index.cshtml" />
-    <Content Include="Areas\Journalist\Views\Magazines\Blank.cshtml" />
     <Content Include="Areas\Journalist\Views\Magazines\ArticlesList.cshtml" />
     <Content Include="Areas\Journalist\Views\Articles\Index.cshtml" />
     <Content Include="Areas\Journalist\Views\Articles\Details.cshtml" />
@@ -316,6 +315,8 @@
     <Content Include="Areas\Journalist\Views\Home\Index.cshtml" />
     <Content Include="Areas\Reader\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\Create.cshtml" />
+    <Content Include="Areas\Journalist\Views\Magazines\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fileinput.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

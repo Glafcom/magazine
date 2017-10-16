@@ -2,31 +2,17 @@
 @model BlankMagazineViewModel
 
 @{
-    ViewBag.Title = "Blank";
+    ViewBag.Title = "Edit Magazine";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    var caption = Model.IsNew
-        ? "Create Magazine"
-        : "Edit Magazine";
-    var action = Model.IsNew
-        ? "Create"
-        : "Edit";
-    var submitText = Model.IsNew
-        ? "Add"
-        : "Save";
-}
-
-
-
 <div class="container magazine-container">
-    @using (Html.BeginForm(action, "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form", @enctype = "multipart/form-data" })) {
+    @using (Html.BeginForm("Edit", "Magazines", FormMethod.Post, new { @class = "form-horizontal", role = "form", @enctype = "multipart/form-data" })) {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(m => m.Id)
         @Html.HiddenFor(m => m.MainPicture)
         @Html.HiddenFor(m => m.Number)
-        <h2>@caption</h2>
+        <h2>Edit Magazine</h2>
         <hr />
 
         <div class="form-group">
@@ -52,22 +38,22 @@
                     </thead>
                     <tbody>
                         @foreach (var article in Model.Articles) {
-                                <tr>
-                                    <td>
-                                        <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
-                                    </td>
-                                    <td>@article.Caption</td>
-                                    <td>@article.ShortText</td>
-                                    <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
-                                    <td>
-                                        <a href="@Url.Action("Details", "Articles", new { id = article.Id })" class="btn btn-default">Details</a>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-default remove-article-btn">Remove</button>
-                                    </td>
-                                </tr>
-                            }
-                        
+                            <tr>
+                                <td>
+                                    <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
+                                </td>
+                                <td>@article.Caption</td>
+                                <td>@article.ShortText</td>
+                                <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "Articles", new { id = article.Id })" class="btn btn-default">Details</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-default remove-article-btn">Remove</button>
+                                </td>
+                            </tr>
+                        }
+
                     </tbody>
                 </table>
             }
@@ -79,7 +65,7 @@
 
         <div class="form-group" style="margin-top:50px;">
             <div class="col-md-offset-2 col-md-5">
-                <input type="submit" class="btn btn-default" value="@submitText" />
+                <input type="submit" class="btn btn-default" value="Save" />
             </div>
             <div class="col-md-5">
                 <a href="@Url.Action("Index", "Magazines", new { area = "Journalist" })" class="btn btn-default">Cancel</a>

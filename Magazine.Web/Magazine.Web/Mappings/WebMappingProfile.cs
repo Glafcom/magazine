@@ -3,10 +3,12 @@ using MagazineApp.Common.Extensions;
 using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Entities.Identity;
+using MagazineApp.Domain.Filters;
 using MagazineApp.Web.Areas.Account.Models;
 using MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels;
 using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
 using MagazineApp.Web.Models.ArticlesViewModels;
+using MagazineApp.Web.Models.Filters;
 using MagazineApp.Web.Models.MagazinesViewModels;
 using MagazineApp.Web.Models.UsersViewModels;
 using System;
@@ -59,8 +61,17 @@ namespace MagazineApp.Web.Mappings {
             CreateMap<MagazineViewModel, Magazine>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<User, UserViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
             CreateMap<UserViewModel, User>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
-            
 
+
+
+            #endregion
+
+            #region [ Filter mappings ]
+
+            CreateMap<ArticleFilter, ArticleFilterViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<ArticleFilterViewModel, ArticleFilter>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<MagazineFilter, MagazineFilterViewModel>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
+            CreateMap<MagazineFilterViewModel, MagazineFilter>().IgnoreAllNonExisting().ReverseMap().IgnoreAllNonExisting();
 
             #endregion
 

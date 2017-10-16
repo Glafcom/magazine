@@ -58,9 +58,15 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
 
         [HttpGet]
         public ActionResult Create() {
-            var model = new BlankMagazineViewModel();
-            model.IsNew = true;
-            return View("~/Areas/Journalist/Views/Magazines/Blank.cshtml", model);
+            BlankMagazineViewModel model;
+            if (TempData["MagazineModel"] != null) {
+                model = TempData["MagazineModel"] as BlankMagazineViewModel;
+            }
+            else {
+                model = new BlankMagazineViewModel();
+                model.IsNew = true;
+            }             
+            return View(model);
         }
 
         [HttpPost]
@@ -73,11 +79,18 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(Guid id) {
-            var magazine = _magazineService.GetItem(id);
-            var model = Mapper.Map<BlankMagazineViewModel>(magazine);
-            model.IsNew = false;
-            return View("~/Areas/Journalist/Views/Magazines/Blank.cshtml", model);
+        public ActionResult Edit(Guid? id) {
+            BlankMagazineViewModel model;
+            if (TempData["MagazineModel"] != null) {
+                model = TempData["MagazineModel"] as BlankMagazineViewModel;
+            }
+            else {
+                var magazine = _magazineService.GetItem(id.Value);
+                model = Mapper.Map<BlankMagazineViewModel>(magazine);
+                model.IsNew = false;
+            }
+            
+            return View(model);
         }
 
         [HttpPost]
@@ -97,20 +110,27 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         }
 
         [HttpGet]
-        public ActionResult ArticlesList(ArticleFilter filter) {
-            var articles = _articleService.GetArticlesByFilter(filter);
-            var model = new ArticlesListViewModel {
-                Filter = filter,
-                Articles = articles
-                    .Select(a => Mapper.Map<ArticleViewModel>(a))
-                    .ToList()
-            };
-            return View(model);
+        public ActionResult CreateArticle(BlankMagazineViewModel model) {
+            TempData["MagazineModel"] = model;
+            return RedirectToAction("Create", "Articles", new { area = "Journalist" });
         }
 
-        [HttpPost]
-        public ActionResult AddArticles(List<Guid> articleIds) {
+        [HttpGet]
+        public ActionResult EditArticle(BlankMagazineViewModel model) {
+            TempData["MagazineModel"] = model;
+            return RedirectToAction("Edit", "Articles", new { area = "Journalist" });
+        }
 
+        [HttpGet]
+        public ActionResult DeleteArticle(Guid id, BlankMagazineViewModel model) {
+            TempData["MagazineModel"] = model;
+            _articleService.DeleteItem(id);
+            if (model.IsNew) {
+                return RedirectToAction("Create");
+            }
+            else {
+                return RedirectToAction("Edit", model.Id);
+            }
         }
     }
 }

@@ -3,8 +3,10 @@ using MagazineApp.Contracts.BLLContracts.Services;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Filters;
 using MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels;
+using MagazineApp.Web.Areas.Journalist.Models.MagazinesViewModels;
 using MagazineApp.Web.Helpers;
 using MagazineApp.Web.Models.ArticlesViewModels;
+using MagazineApp.Web.Models.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,17 +18,24 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
     public class ArticlesController : Controller
     {
         protected readonly IArticleService _articleService;
+        protected readonly IUserService _userService;
 
-        public ArticlesController(IArticleService articleService) {
+        public ArticlesController(IArticleService articleService, IUserService userService) {
             _articleService = articleService;
+            _userService = userService;
         }
 
         // GET: Journalist/Articles
         public ActionResult Index(ArticleFilter filter)
         {
+            var filterModel = Mapper.Map<ArticleFilterViewModel>(filter);
+            filterModel.JournalistsList = _userService.GetJournalistsList()
+                .Select(j => new SelectListItem { Value = j.Id.ToString(), Text = $"{j.Name} {j.Surname}" })
+                .ToList();
+
             var articles = _articleService.GetArticlesByFilter(filter);
             var model = new ArticlesListViewModel {
-                Filter = filter,
+                Filter = filterModel,
                 Articles = articles.Select(a => Mapper.Map<ArticleViewModel>(a)).ToList()
             };
             return View(model);
@@ -68,13 +77,7 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
                 _articleService.ChangeItem(article.Id, article);
             };
             
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
-        public ActionResult Delete(Guid id) {
-            _articleService.DeleteItem(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit","Magazines", new { area = "Journalist" });
         }
 
         [HttpGet]
