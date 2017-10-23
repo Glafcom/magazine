@@ -7,9 +7,11 @@ using MagazineApp.DAL.AppDbContext;
 using MagazineApp.DAL.Repositories;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Entities.Identity;
+using MagazineApp.Interceptions.Behaviours;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.InterceptionExtension;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,7 +29,12 @@ namespace MagazineApp.Infrastructure.ContainerExtensions {
             Container.RegisterType<IAccountService, AccountService>(new PerRequestLifetimeManager());
             Container.RegisterType<IArticleService, ArticleService>(new PerRequestLifetimeManager());
             Container.RegisterType<IMagazineService, MagazineService>(new PerRequestLifetimeManager());
-            Container.RegisterType<IUserService, UserService>(new PerRequestLifetimeManager());
+            Container.RegisterType<IUserService, UserService>(new PerRequestLifetimeManager(),
+                    new Interceptor<InterfaceInterceptor>(),
+                    new InterceptionBehavior<SecurityBehavior>(),
+                    new InterceptionBehavior<LoggingBehavior>()
+                    
+                );
             Container.RegisterType<IUserStore<User,Guid>, ApplicationUserStore>(new PerRequestLifetimeManager());
             Container.RegisterType<IAuthenticationManager>(new PerRequestLifetimeManager(), new InjectionFactory(o => System.Web.HttpContext.Current.GetOwinContext().Authentication));
 

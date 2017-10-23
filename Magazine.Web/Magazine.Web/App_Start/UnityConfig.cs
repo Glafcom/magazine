@@ -3,6 +3,8 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using Microsoft.Practices.Unity.InterceptionExtension;
 using MagazineApp.Infrastructure.ContainerExtensions;
+using MagazineApp.Contracts.BLLContracts.Services;
+using MagazineApp.Interceptions.Behaviours;
 
 namespace MagazineApp.Web.App_Start
 {

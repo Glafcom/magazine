@@ -1,4 +1,5 @@
-﻿using MagazineApp.Web.App_Start;
+﻿using MagazineApp.Logging;
+using MagazineApp.Web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace MagazineApp.Web {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutomapperConfig.CreateMap();
+            Logger.InitLogger();
         }
     }
 }

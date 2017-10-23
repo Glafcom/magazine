@@ -1,10 +1,3 @@
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.dll
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.pdb
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\AutoMapper.dll
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\AutoMapper.xml
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.csprojResolveAssemblyReference.cache
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.dll
-c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.pdb
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.dll
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\MagazineApp.Common.pdb
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\bin\Debug\AutoMapper.dll
@@ -12,3 +5,10 @@ C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\Magaz
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.csprojResolveAssemblyReference.cache
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.dll
 C:\Dima\Sibers\Attestation\Middle1\Practice\Magazine\magazine\Magazine.Web\MagazineApp.Common\obj\Debug\MagazineApp.Common.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\bin\Debug\MagazineApp.Common.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\bin\Debug\MagazineApp.Common.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\bin\Debug\AutoMapper.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\bin\Debug\AutoMapper.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\obj\Debug\MagazineApp.Common.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\obj\Debug\MagazineApp.Common.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Common\obj\Debug\MagazineApp.Common.csprojResolveAssemblyReference.cache

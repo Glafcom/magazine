@@ -33,7 +33,7 @@ namespace MagazineApp.BLL.Services {
                 articles = articles.Where(a => a.CreateDate >= filter.CreateDateFrom);
 
             if (filter.CreateDateTo.HasValue)
-                articles = articles.Where(a => a.CreateDate <= filter.CreateDateTo);
+                articles = articles.Where(a => a.CreateDate <= filter.CreateDateTo);            
 
             return articles.ToList();
         }
