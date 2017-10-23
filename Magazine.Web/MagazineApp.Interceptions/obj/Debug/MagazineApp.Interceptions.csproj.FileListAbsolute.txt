@@ -1,0 +1,17 @@
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\obj\Debug\MagazineApp.Interceptions.csprojResolveAssemblyReference.cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\MagazineApp.Interceptions.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\MagazineApp.Interceptions.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\MagazineApp.Logging.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Unity.Abstractions.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\log4net.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\MagazineApp.Logging.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\log4net.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\obj\Debug\MagazineApp.Interceptions.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\obj\Debug\MagazineApp.Interceptions.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Unity.Container.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Unity.Abstractions.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.Interceptions\bin\Debug\Unity.Container.pdb

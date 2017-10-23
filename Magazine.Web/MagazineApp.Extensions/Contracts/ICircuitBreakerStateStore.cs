@@ -1,12 +1,13 @@
-﻿using System;
+﻿using MagazineApp.Extensions.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MagazineApp.Extensions.Contracts {
-    public interface ICircuitBreaker {
-        CircuitBreakerStateEnum State { get; }
+    public interface ICircuitBreakerStateStore {
+        CircuitBreakerState State { get; }
 
         Exception LastException { get; }
 

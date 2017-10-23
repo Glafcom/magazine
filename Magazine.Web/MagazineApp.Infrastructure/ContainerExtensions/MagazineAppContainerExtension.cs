@@ -7,7 +7,7 @@ using MagazineApp.DAL.AppDbContext;
 using MagazineApp.DAL.Repositories;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Entities.Identity;
-using MagazineApp.Interceptions.Behaviours;
+using MagazineApp.Interceptions.Behaviors;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;

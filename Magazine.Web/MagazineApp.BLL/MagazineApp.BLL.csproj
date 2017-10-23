@@ -122,10 +122,6 @@
       <Project>{31440FD1-A989-42BB-A461-7EC9D08CCA1B}</Project>
       <Name>MagazineApp.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MagazineApp.Logging\MagazineApp.Logging.csproj">
-      <Project>{31A0E512-DB2F-4FED-A17F-39E30E384463}</Project>
-      <Name>MagazineApp.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

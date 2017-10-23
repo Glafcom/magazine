@@ -57,19 +57,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Behaviours\CachingBehavior.cs" />
-    <Compile Include="Behaviours\LoggingBehavior.cs" />
-    <Compile Include="Behaviours\SecurityBehavior.cs" />
+    <Compile Include="Behaviors\AuditBehavior.cs" />
+    <Compile Include="Behaviors\CachingBehavior.cs" />
+    <Compile Include="Behaviors\LoggingBehavior.cs" />
+    <Compile Include="Behaviors\SecurityBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MagazineApp.Logging\MagazineApp.Logging.csproj">
-      <Project>{31A0E512-DB2F-4FED-A17F-39E30E384463}</Project>
-      <Name>MagazineApp.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

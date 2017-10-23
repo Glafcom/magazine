@@ -408,10 +408,6 @@
       <Project>{3C1C6EF1-79D5-4F93-A1E4-8919E3B41A64}</Project>
       <Name>MagazineApp.Interceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MagazineApp.Logging\MagazineApp.Logging.csproj">
-      <Project>{31A0E512-DB2F-4FED-A17F-39E30E384463}</Project>
-      <Name>MagazineApp.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
