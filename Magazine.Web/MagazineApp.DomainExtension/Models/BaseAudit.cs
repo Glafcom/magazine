@@ -10,8 +10,6 @@ namespace MagazineApp.DomainExtension.Models {
         public Guid CreateById { get; set; }
         public DateTime UpdateDate { get; set; }
         public Guid UpdatedById { get; set; }
-
-        public virtual User CreatedBy { get; set; }
-        public virtual User UpdatedBy { get; set; }
+        
     }
 }

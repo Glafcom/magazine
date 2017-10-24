@@ -7,13 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MagazineApp.DomainExtension.Models {
-    public class AuditMagazine : Magazine {
-        public DateTime CreateDate { get; set; }
-        public Guid CreateById { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public Guid UpdatedById { get; set; }
-
-        public virtual User CreatedBy { get; set; }
-        public virtual User UpdatedBy { get; set; }
+    public class AuditMagazine : BaseAudit {
+        public int Number { get; set; }
+        public byte[] MainPicture { get; set; }
+        public bool? IsPublished { get; set; }
+        public DateTime PublishDate { get; set; }
+        public Guid PublisherId { get; set; }
     }
 }

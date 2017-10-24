@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MagazineApp.Extensions")]
+[assembly: AssemblyTitle("MagazineApp.DALExtension")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MagazineApp.Extensions")]
+[assembly: AssemblyProduct("MagazineApp.DALExtension")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9dcefb73-1049-447f-b824-d5543bc07f24")]
+[assembly: Guid("4fce2215-1de6-4ebf-bc37-1f242ee474fd")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagazineApp.Extensions.Enums {
-    public enum CircuitBreakerState {
-        Open,
-        HalfOpen,
-        Closed
+namespace MagazineApp.Interceptions.Behaviors {
+    public class FailSafetyBehavior {
     }
 }

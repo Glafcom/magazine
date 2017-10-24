@@ -10,12 +10,9 @@ namespace MagazineApp.Domain.Entities {
         public string Caption { get; set; }
         public string ShortText { get; set; }
         public string LongText { get; set; }
-        public Guid AuthorId { get; set; }
         public byte[] MainPicture { get; set; }
-        
-        public DateTime CreateDate { get; set; }
+        public Guid MagazineId { get; set; }
 
-
-        public virtual User Author { get; set; }
+        public virtual Magazine Magazine { get; set; }
     }
 }

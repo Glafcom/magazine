@@ -15,9 +15,8 @@ namespace MagazineApp.Domain.Entities {
         public int Number { get; set; }
         public byte[] MainPicture { get; set; }
         public bool? IsPublished { get; set; }
-        public Guid? PublisherId { get; set; } 
         public DateTime? PublishDate { get; set; }
-
+        public Guid? PublisherId { get; set; }
         public virtual User Publisher { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
     }
