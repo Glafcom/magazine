@@ -14,8 +14,8 @@ namespace MagazineApp.CommonExtensions.CircuitBreaker.States {
 
         public override void ActUponException(Exception e) {
             base.ActUponException(e);
-            if (circuitBreaker.IsThresholdReached()) {
-                circuitBreaker.MoveToOpenState();
+            if (_circuitBreaker.IsThresholdReached()) {
+                _circuitBreaker.MoveToOpenState();
             }
         }
 

@@ -26,3 +26,17 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\Mag
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\Magazine.Domain\obj\Debug\MagazineApp.Domain.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\Magazine.Domain\obj\Debug\MagazineApp.Domain.pdb
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll.config
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\MagazineApp.Domain.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.SqlServer.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\EntityFramework.SqlServer.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.csprojResolveAssemblyReference.cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\Magazine.Domain\obj\Debug\MagazineApp.Domain.pdb

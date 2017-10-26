@@ -6,7 +6,6 @@ using MagazineApp.Contracts.DtoModels;
 using MagazineApp.Domain.Entities.Identity;
 using MagazineApp.Domain.Enums;
 using MagazineApp.Domain.Filters;
-using MagazineApp.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;

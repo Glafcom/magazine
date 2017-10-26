@@ -28,12 +28,12 @@ namespace MagazineApp.Infrastructure.ContainerExtensions {
 
             Container.RegisterType<IAccountService, AccountService>(new PerRequestLifetimeManager());
             Container.RegisterType<IArticleService, ArticleService>(new PerRequestLifetimeManager());
-            Container.RegisterType<IMagazineService, MagazineService>(new PerRequestLifetimeManager());
+            Container.RegisterType<IMagazineService, MagazineService>(new PerRequestLifetimeManager(),
+                new Interceptor<InterfaceInterceptor>(),
+                new InterceptionBehavior<LoggingBehavior>());
             Container.RegisterType<IUserService, UserService>(new PerRequestLifetimeManager(),
                     new Interceptor<InterfaceInterceptor>(),
-                    new InterceptionBehavior<SecurityBehavior>(),
-                    new InterceptionBehavior<LoggingBehavior>()
-                    
+                    new InterceptionBehavior<LoggingBehavior>()                    
                 );
             Container.RegisterType<IUserStore<User,Guid>, ApplicationUserStore>(new PerRequestLifetimeManager());
             Container.RegisterType<IAuthenticationManager>(new PerRequestLifetimeManager(), new InjectionFactory(o => System.Web.HttpContext.Current.GetOwinContext().Authentication));

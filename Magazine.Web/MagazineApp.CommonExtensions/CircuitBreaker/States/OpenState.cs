@@ -16,13 +16,13 @@ namespace MagazineApp.CommonExtensions.CircuitBreaker.States {
         public override CircuitBreaker ProtectedCodeIsAboutToBeCalled() {
             base.ProtectedCodeIsAboutToBeCalled();
             this.Update();
-            return base.circuitBreaker;
+            return base._circuitBreaker;
         }
 
         public override CircuitBreakerState Update() {
             base.Update();
-            if (DateTime.UtcNow >= openDateTime + base.circuitBreaker.Timeout) {
-                return circuitBreaker.MoveToHalfOpenState();
+            if (DateTime.UtcNow >= openDateTime + base._circuitBreaker.Timeout) {
+                return _circuitBreaker.MoveToHalfOpenState();
             }
             return this;
         }

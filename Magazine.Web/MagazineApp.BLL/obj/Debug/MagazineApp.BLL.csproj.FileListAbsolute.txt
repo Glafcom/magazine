@@ -76,3 +76,6 @@ c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\Mag
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.csprojResolveAssemblyReference.cache
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.dll
 c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine2\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.pdb
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.csprojResolveAssemblyReference.cache
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.dll
+c:\Дима\Работа\Аттестация\Middle1\Practice\Git\Magazine\magazine\Magazine.Web\MagazineApp.BLL\obj\Debug\MagazineApp.BLL.pdb

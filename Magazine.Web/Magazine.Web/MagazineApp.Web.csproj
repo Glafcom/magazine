@@ -392,6 +392,10 @@
       <Project>{605bd5c2-3e41-4ed3-bef9-ae7ca747270f}</Project>
       <Name>MagazineApp.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.CommonExtensions\MagazineApp.CommonExtensions.csproj">
+      <Project>{D5FCC39D-2190-46C0-8B53-48A902B67907}</Project>
+      <Name>MagazineApp.CommonExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MagazineApp.Common\MagazineApp.Common.csproj">
       <Project>{3BB72A90-BEF1-4AAA-AC02-680A0D6A1644}</Project>
       <Name>MagazineApp.Common</Name>

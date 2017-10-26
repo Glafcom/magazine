@@ -68,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MagazineApp.BLLExtension\MagazineApp.BLLExtension.csproj">
+      <Project>{FD1A16BB-6D11-44A1-94AD-9B628603D19D}</Project>
+      <Name>MagazineApp.BLLExtension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MagazineApp.CommonExtensions\MagazineApp.CommonExtensions.csproj">
       <Project>{D5FCC39D-2190-46C0-8B53-48A902B67907}</Project>
       <Name>MagazineApp.CommonExtensions</Name>

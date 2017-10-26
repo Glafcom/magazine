@@ -11,12 +11,12 @@ namespace MagazineApp.CommonExtensions.CircuitBreaker.States {
 
         public override void ActUponException(Exception e) {
             base.ActUponException(e);
-            circuitBreaker.MoveToOpenState();
+            _circuitBreaker.MoveToOpenState();
         }
 
         public override void ProtectedCodeHasBeenCalled() {
             base.ProtectedCodeHasBeenCalled();
-            circuitBreaker.MoveToClosedState();
+            _circuitBreaker.MoveToClosedState();
         }
 
     }

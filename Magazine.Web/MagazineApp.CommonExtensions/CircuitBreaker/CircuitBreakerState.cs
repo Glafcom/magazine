@@ -17,7 +17,7 @@ namespace MagazineApp.CommonExtensions.CircuitBreaker {
         }
 
         public virtual void ProtectedCodeHasBeenCalled() { }
-        public virtual void ActUponException(Exception e) { circuitBreaker.IncreaseFailureCount(); }
+        public virtual void ActUponException(Exception e) { _circuitBreaker.IncreaseFailureCount(); }
 
         public virtual CircuitBreakerState Update() {
             return this;
