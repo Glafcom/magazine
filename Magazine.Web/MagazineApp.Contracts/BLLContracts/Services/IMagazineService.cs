@@ -12,5 +12,8 @@ namespace MagazineApp.Contracts.BLLContracts.Services {
         List<Magazine> GetMagazinesByFilter(MagazineFilter filter);
 
         List<int> GetCurrentMagazineNumbers();
+        void PublishMagazine(Guid id);
+        void UnpublishMagazine(Guid id);
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MagazineApp.CommonExtensions.Exceptions;
 using MagazineApp.Contracts.BLLContracts.Services;
 using MagazineApp.Domain.Entities;
 using MagazineApp.Domain.Filters;
@@ -49,8 +50,9 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
         }
 
         [HttpGet]
-        public ActionResult Create() {
+        public ActionResult Create(Guid magazineId) {
             var model = new BlankArticleViewModel {
+                MagazineId = magazineId,
                 IsNew = true
             };
             return View("Blank", model);
@@ -70,14 +72,26 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers {
                 model.MainPicture = FileHelper.SetUploadedFileToBytes(model.MainPictureFile);
             }
             var article = Mapper.Map<Article>(model);
-            if (model.IsNew) {
-                _articleService.AddItem(article);
+            try {
+                if (model.IsNew) {
+                    _articleService.AddItem(article);
+                }
+                else {
+                    _articleService.ChangeItem(article.Id, article);
+                };
+            } catch (AuthorizationException ex) {
+                model.IsError = true;
+                model.ErrorMessage = ex.Message;
+                return View("Blank", model);
             }
-            else {
-                _articleService.ChangeItem(article.Id, article);
-            };
             
-            return RedirectToAction("Edit","Magazines", new { area = "Journalist" });
+            
+            return RedirectToAction("Edit","Magazines", new {  id = model.MagazineId,area = "Journalist" });
+        }
+
+        public ActionResult Delete(Guid id) {
+            _articleService.DeleteItem(id);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

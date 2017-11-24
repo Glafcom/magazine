@@ -15,18 +15,16 @@ namespace MagazineApp.DAL.Migrations
                         Caption = c.String(),
                         ShortText = c.String(),
                         LongText = c.String(),
+                        MainPicture = c.Binary(),
+                        MagazineId = c.Guid(nullable: false),
                         AuthorId = c.Guid(nullable: false),
-                        MainPictureId = c.Guid(nullable: false),
                         CreateDate = c.DateTime(nullable: false),
-                        Magazine_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.AuthorId, cascadeDelete: true)
-                .ForeignKey("dbo.Pictures", t => t.MainPictureId, cascadeDelete: true)
-                .ForeignKey("dbo.Magazines", t => t.Magazine_Id)
-                .Index(t => t.AuthorId)
-                .Index(t => t.MainPictureId)
-                .Index(t => t.Magazine_Id);
+                .ForeignKey("dbo.Magazines", t => t.MagazineId, cascadeDelete: true)
+                .Index(t => t.MagazineId)
+                .Index(t => t.AuthorId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -100,32 +98,18 @@ namespace MagazineApp.DAL.Migrations
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
             
             CreateTable(
-                "dbo.Pictures",
-                c => new
-                    {
-                        Id = c.Guid(nullable: false, identity: true),
-                        Name = c.String(),
-                        Content = c.Binary(),
-                        Description = c.String(),
-                        Author = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "dbo.Magazines",
                 c => new
                     {
                         Id = c.Guid(nullable: false, identity: true),
                         Number = c.Int(nullable: false),
-                        MainPictureId = c.Guid(),
+                        MainPicture = c.Binary(),
                         IsPublished = c.Boolean(),
-                        PublisherId = c.Guid(),
                         PublishDate = c.DateTime(),
+                        PublisherId = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Pictures", t => t.MainPictureId)
                 .ForeignKey("dbo.AspNetUsers", t => t.PublisherId)
-                .Index(t => t.MainPictureId)
                 .Index(t => t.PublisherId);
             
         }
@@ -133,27 +117,22 @@ namespace MagazineApp.DAL.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Magazines", "PublisherId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Magazines", "MainPictureId", "dbo.Pictures");
-            DropForeignKey("dbo.Articles", "Magazine_Id", "dbo.Magazines");
-            DropForeignKey("dbo.Articles", "MainPictureId", "dbo.Pictures");
+            DropForeignKey("dbo.Articles", "MagazineId", "dbo.Magazines");
             DropForeignKey("dbo.Articles", "AuthorId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.Magazines", new[] { "PublisherId" });
-            DropIndex("dbo.Magazines", new[] { "MainPictureId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Articles", new[] { "Magazine_Id" });
-            DropIndex("dbo.Articles", new[] { "MainPictureId" });
             DropIndex("dbo.Articles", new[] { "AuthorId" });
+            DropIndex("dbo.Articles", new[] { "MagazineId" });
             DropTable("dbo.Magazines");
-            DropTable("dbo.Pictures");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");

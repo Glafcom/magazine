@@ -6,11 +6,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Articles</h2>
+<h2 style="text-align:center;">Articles</h2>
 
-@Html.Partial("_ArticleFilterPartialView", Model.Filter)
+@*
+    @Html.Partial("_ArticleFilterPartialView", Model.Filter)
+*@
 
-<div class="container articles-container">
+
+
+<div class="container articles-container" style="margin-top:60px;">
     @if (Model.Articles != null && Model.Articles.Count() > 0) {
         <table class="table table-bordered">
             <thead>
@@ -26,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var article in Model.Articles) {
+                @foreach (var article in Model.Articles) {
                     <tr>
                         <td>
                             <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
@@ -38,7 +42,7 @@
                         <td><a href="@Url.Action("Details", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Details</a></td>
                         <td><a href="@Url.Action("Edit", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Edit</a></td>
                         <td>
-                            <a href="@Url.Action("Delete", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Delete</a>
+                            <a href="@Url.Action("Delete", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 }
@@ -46,10 +50,13 @@
         </table>
     }
     else {
-        <p>There are no articles</p>
+        <h3>There are no articles</h3>
     }
 
-    <a href="@Url.Action("Create", "Articles", new { area = "Journalist" })" class="btn btn-default pull-right">Add</a>
+        @*
+        <a href="@Url.Action("Create", "Articles", new { area = "Journalist" })" class="btn btn-default pull-right">Add</a>
+        *@
+    
 
 </div>
 

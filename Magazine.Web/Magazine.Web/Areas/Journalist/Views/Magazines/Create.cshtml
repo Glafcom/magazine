@@ -18,7 +18,10 @@
 
         <div class="form-group">
             <label class="control-label">Select main picture for magazine</label>
-            <input id="MainPictureFile" name="MainPictureFile" type="file" class="file-loading" accept="image/*">
+            <div style="max-width:200px;">
+                <input id="MainPictureFile" name="MainPictureFile" type="file" class="file-loading" accept="image/*">
+            </div>
+            
         </div>
 
         <h3>Articles</h3>
@@ -28,7 +31,7 @@
                 <input type="submit" class="btn btn-default" value="Add" />
             </div>
             <div class="col-md-5">
-                <a href="@Url.Action("Index", "Magazines", new { area = "Journalist" })" class="btn btn-default">Cancel</a>
+                <a href="javascript:history.back()" class="btn btn-default">Cancel</a>
             </div>
         </div>
 

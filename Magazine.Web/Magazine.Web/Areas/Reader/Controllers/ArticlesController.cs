@@ -27,7 +27,7 @@ namespace MagazineApp.Web.Areas.Reader.Controllers
             filterModel.JournalistsList = _userService.GetJournalistsList()
                 .Select(j => new SelectListItem { Value = j.Id.ToString(), Text = $"{j.Name} {j.Surname}" })
                 .ToList();
-            var articles = _articleService.GetArticlesByFilter(filter);
+            var articles = _articleService.GetPublishedArticlesByFilter(filter);
             var model = new ArticlesListViewModel {
                 Filter = filterModel,
                 Articles = articles.Select(a => Mapper.Map<ArticleViewModel>(a)).ToList()

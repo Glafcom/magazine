@@ -58,13 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext\MagazineAppDbContext.cs" />
-    <Compile Include="Migrations\201710011708318_InitialMigration.cs" />
-    <Compile Include="Migrations\201710011708318_InitialMigration.Designer.cs">
-      <DependentUpon>201710011708318_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710081519514_DeletedPictureEntity.cs" />
-    <Compile Include="Migrations\201710081519514_DeletedPictureEntity.Designer.cs">
-      <DependentUpon>201710081519514_DeletedPictureEntity.cs</DependentUpon>
+    <Compile Include="Migrations\201711121055061_InitialMigration.cs" />
+    <Compile Include="Migrations\201711121055061_InitialMigration.Designer.cs">
+      <DependentUpon>201711121055061_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,11 +81,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710011708318_InitialMigration.resx">
-      <DependentUpon>201710011708318_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710081519514_DeletedPictureEntity.resx">
-      <DependentUpon>201710081519514_DeletedPictureEntity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711121055061_InitialMigration.resx">
+      <DependentUpon>201711121055061_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

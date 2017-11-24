@@ -23,6 +23,7 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         protected readonly IUserService _userService;
 
 
+
         public MagazinesController(IMagazineService magazineService, IArticleService articleService, IUserService userService) {
             _magazineService = magazineService;
             _articleService = articleService;
@@ -79,17 +80,11 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(Guid? id) {
-            BlankMagazineViewModel model;
-            if (TempData["MagazineModel"] != null) {
-                model = TempData["MagazineModel"] as BlankMagazineViewModel;
-            }
-            else {
-                var magazine = _magazineService.GetItem(id.Value);
-                model = Mapper.Map<BlankMagazineViewModel>(magazine);
-                model.IsNew = false;
-            }
-            
+        public ActionResult Edit(Guid id) {
+            var magazine = _magazineService.GetItem(id);
+            var model = Mapper.Map<BlankMagazineViewModel>(magazine);
+            model.IsNew = false;
+
             return View(model);
         }
 
@@ -108,29 +103,23 @@ namespace MagazineApp.Web.Areas.Journalist.Controllers
             _magazineService.DeleteItem(id);
             return RedirectToAction("Index");
         }
-
+        
         [HttpGet]
-        public ActionResult CreateArticle(BlankMagazineViewModel model) {
-            TempData["MagazineModel"] = model;
-            return RedirectToAction("Create", "Articles", new { area = "Journalist" });
+        public ActionResult DeleteArticle(Guid id, Guid articleId) {
+            _articleService.DeleteItem(articleId);
+            return RedirectToAction("Edit", new { id = id });
         }
 
         [HttpGet]
-        public ActionResult EditArticle(BlankMagazineViewModel model) {
-            TempData["MagazineModel"] = model;
-            return RedirectToAction("Edit", "Articles", new { area = "Journalist" });
+        public ActionResult Publish(Guid id) {
+            _magazineService.PublishMagazine(id);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult DeleteArticle(Guid id, BlankMagazineViewModel model) {
-            TempData["MagazineModel"] = model;
-            _articleService.DeleteItem(id);
-            if (model.IsNew) {
-                return RedirectToAction("Create");
-            }
-            else {
-                return RedirectToAction("Edit", model.Id);
-            }
+        public ActionResult Unpublish(Guid id) {
+            _magazineService.UnpublishMagazine(id);
+            return RedirectToAction("Index");
         }
     }
 }

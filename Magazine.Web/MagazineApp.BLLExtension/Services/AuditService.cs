@@ -1,4 +1,4 @@
-﻿using MagazineApp.BLLExtension.Interfaces;
+﻿using MagazineApp.ContractsExtension.BLLContracts;
 using MagazineApp.DALExtension.Interfaces;
 using MagazineApp.DomainExtension.Models;
 using System;
@@ -27,11 +27,25 @@ namespace MagazineApp.BLLExtension.Services {
             return _articleRepository.GetByID(id);
         }
 
+        public AuditArticle GetFirstArticleByOriginalId(Guid originalId) {
+            return _articleRepository.Get().Where(a => a.OriginalId == originalId).OrderBy(a => a.UpdateDate).FirstOrDefault();
+        }
+
+        public AuditArticle GetLastArticleByOriginalId(Guid originalId) {
+            return _articleRepository.Get().Where(a => a.OriginalId == originalId).OrderBy(a => a.UpdateDate).LastOrDefault();
+        }
+
         public AuditArticle GetLastArticle() {
             return _articleRepository.Get().OrderBy(a => a.UpdateDate).Last();
         }
 
-        public void AddArticleRecord(AuditArticle article) {
+        public void AddArticleRecord(AuditArticle article, bool isNew = true) {
+            if (!isNew) {
+                var legacyArticle = GetFirstArticleByOriginalId(article.OriginalId);
+                article.CreateById = legacyArticle.CreateById;
+                article.CreateDate = legacyArticle.CreateDate;
+            }
+
             _articleRepository.Insert(article);
         }
 
@@ -47,7 +61,21 @@ namespace MagazineApp.BLLExtension.Services {
             return _magazineRepository.Get().OrderBy(m => m.UpdateDate).Last();
         }
 
-        public void AddMagazineRecord(AuditMagazine magazine) {
+        public AuditMagazine GetFirstMagazineByOriginalId(Guid originalId) {
+            return _magazineRepository.Get().Where(m => m.OriginalId == originalId).OrderBy(m => m.UpdateDate).FirstOrDefault();
+        }
+
+        public AuditMagazine GetLastMagazineByOriginalId(Guid originalId) {
+            return _magazineRepository.Get().Where(m => m.OriginalId == originalId).OrderBy(m => m.UpdateDate).ToList().LastOrDefault();
+        }
+
+        public void AddMagazineRecord(AuditMagazine magazine, bool isNew = true) {
+            if (!isNew) {
+                var legacyMagazine = GetFirstMagazineByOriginalId(magazine.OriginalId);
+                magazine.CreateById = legacyMagazine.CreateById;
+                magazine.CreateDate = legacyMagazine.CreateDate;
+            }
+
             _magazineRepository.Insert(magazine);
         }
     }

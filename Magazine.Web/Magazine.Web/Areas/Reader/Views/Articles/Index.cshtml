@@ -1,0 +1,55 @@
+﻿@using MagazineApp.Web.Models.ArticlesViewModels;
+@model ArticlesListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Articles</h2>
+
+@*
+    @Html.Partial("_ArticleFilterPartialView", Model.Filter)
+*@
+
+
+
+<div class="container articles-container" style="margin-top:60px;">
+    @if (Model.Articles != null && Model.Articles.Count() > 0) {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Caption</th>
+                    <th>Short Text</th>
+                    <th>Create Date</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var article in Model.Articles) {
+                    <tr>
+                        <td>
+                            <img src="@(article.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(article.MainPicture)) : "#")" class="file-preview-image" title="@article.Caption">
+                        </td>
+                        <td>@article.Caption</td>
+                        <td>@article.ShortText</td>
+                        <td>@article.CreateDate.ToString("dd.MM.yyyy")</td>
+                        <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
+                        <td><a href="@Url.Action("Details", "Articles", new { id = article.Id, area = "Reader" })" class="btn btn-default">Details</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else {
+        <h3>There are no articles</h3>
+    }
+
+    @*
+        <a href="@Url.Action("Create", "Articles", new { area = "Journalist" })" class="btn btn-default pull-right">Add</a>
+    *@
+
+
+</div>
+

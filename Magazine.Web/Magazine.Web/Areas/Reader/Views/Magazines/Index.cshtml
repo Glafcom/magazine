@@ -10,15 +10,32 @@
 
 <div class="magazines-container container">
     <div class="row">
-        @foreach(var magazine in Model.Magazines) {
-            <div class="col-md-4">
-                <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">
-                    <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture.Content)) : "#")" class="file-preview-image" title="@(magazine.MainPicture?.Name ?? string.Empty)">
-                </a>
-                <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">@magazine.PublishDate.Value.ToString("MMM yyyy")</a>
-            </div>
+        @{
+            var magazines = Model.Magazines.Where(m => m.IsPublished.HasValue && m.IsPublished.Value);
         }
+
+        @if (magazines != null && magazines.Count() > 0) {
+            foreach (var magazine in magazines) {
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">
+                                <img src="@(magazine.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(magazine.MainPicture)) : "#")" class="file-preview-image" title="@(magazine.PublishDate)">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <a href="@Url.Action("Details", "Magazines", new { id = magazine.Id})">@magazine.PublishDate.Value.ToString("MMM yyyy")</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else {
+            <h3>There are no published magazines</h3>
+        }
+
     </div>
 
 </div>
-

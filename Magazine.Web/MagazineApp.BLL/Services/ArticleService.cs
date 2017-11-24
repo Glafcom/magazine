@@ -38,6 +38,11 @@ namespace MagazineApp.BLL.Services {
             return articles.ToList();
         }
 
+        public List<Article> GetPublishedArticlesByFilter(ArticleFilter filter) {
+            var articles = GetArticlesByFilter(filter);
+            return articles.Where(a => a.Magazine.IsPublished.HasValue && a.Magazine.IsPublished.Value).ToList();
+        }
+
         public override Article AddItem(Article item) {
             try {
                 item.CreateDate = DateTime.UtcNow;

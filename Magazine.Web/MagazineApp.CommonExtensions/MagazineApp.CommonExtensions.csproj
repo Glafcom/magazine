@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,17 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircuitBreaker\CircuitBreaker.cs" />
-    <Compile Include="CircuitBreaker\CircuitBreakerState.cs" />
-    <Compile Include="CircuitBreaker\States\ClosedState.cs" />
-    <Compile Include="CircuitBreaker\States\HalfOpen.cs" />
-    <Compile Include="CircuitBreaker\States\OpenState.cs" />
+    <Compile Include="CircuitBreakerModels\CircuitBreaker.cs" />
+    <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Exceptions\Base\BaseException.cs" />
+    <Compile Include="Helpers\CachingHelper.cs" />
+    <Compile Include="Helpers\CircuitBreakerHelper.cs" />
+    <Compile Include="CircuitBreakerModels\CircuitBreakerState.cs" />
+    <Compile Include="CircuitBreakerModels\States\ClosedState.cs" />
+    <Compile Include="CircuitBreakerModels\States\HalfOpen.cs" />
+    <Compile Include="CircuitBreakerModels\States\OpenState.cs" />
     <Compile Include="Logger\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

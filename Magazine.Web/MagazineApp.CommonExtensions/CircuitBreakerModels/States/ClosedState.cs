@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagazineApp.CommonExtensions.CircuitBreaker.States {
+namespace MagazineApp.CommonExtensions.CircuitBreakerModels.States {
     public class ClosedState : CircuitBreakerState {
 
         public ClosedState(CircuitBreaker circuitBreaker)

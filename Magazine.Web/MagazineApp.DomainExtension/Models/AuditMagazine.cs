@@ -11,7 +11,14 @@ namespace MagazineApp.DomainExtension.Models {
         public int Number { get; set; }
         public byte[] MainPicture { get; set; }
         public bool? IsPublished { get; set; }
-        public DateTime PublishDate { get; set; }
-        public Guid PublisherId { get; set; }
+        public DateTime? PublishDate { get; set; }
+        public Guid? PublisherId { get; set; }
+
+        public AuditMagazine() {
+            Id = Guid.NewGuid();
+            CreateDate = DateTime.UtcNow;
+            UpdateDate = DateTime.UtcNow;
+        }
+
     }
 }

@@ -14,5 +14,7 @@ namespace MagazineApp.Web.Areas.Journalist.Models.ArticlesViewModels {
         public string LongText { get; set; }
         public byte[] MainPicture { get; set; }
         public HttpPostedFileBase MainPictureFile { get; set; }
+        public bool? IsError { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

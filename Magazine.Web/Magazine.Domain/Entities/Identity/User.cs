@@ -14,6 +14,7 @@ namespace MagazineApp.Domain.Entities.Identity {
             Id = Guid.NewGuid();
         }
 
+        public override Guid Id { get; set; }
         public override string UserName { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

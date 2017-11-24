@@ -9,6 +9,7 @@ namespace MagazineApp.Domain.Entities {
     public class Magazine : BaseEntity {
 
         public Magazine() {
+            Id = Guid.NewGuid();
             Articles = new HashSet<Article>();
         }
 

@@ -1,11 +1,11 @@
-﻿using MagazineApp.CommonExtensions.CircuitBreaker.States;
+﻿using MagazineApp.CommonExtensions.CircuitBreakerModels.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagazineApp.CommonExtensions.CircuitBreaker {
+namespace MagazineApp.CommonExtensions.CircuitBreakerModels {
     public class CircuitBreaker {
         private readonly object monitor = new object();
         private CircuitBreakerState state;

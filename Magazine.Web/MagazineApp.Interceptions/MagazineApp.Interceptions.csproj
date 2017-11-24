@@ -30,6 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity.Interception, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
       <Private>True</Private>
@@ -39,6 +55,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -65,9 +82,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Magazine.DAL\MagazineApp.DAL.csproj">
+      <Project>{5F5CDA51-70A3-4FFB-A5DC-CCBAC30CFB8D}</Project>
+      <Name>MagazineApp.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Magazine.Domain\MagazineApp.Domain.csproj">
+      <Project>{605BD5C2-3E41-4ED3-BEF9-AE7CA747270F}</Project>
+      <Name>MagazineApp.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MagazineApp.BLLExtension\MagazineApp.BLLExtension.csproj">
       <Project>{FD1A16BB-6D11-44A1-94AD-9B628603D19D}</Project>
       <Name>MagazineApp.BLLExtension</Name>
@@ -75,6 +101,18 @@
     <ProjectReference Include="..\MagazineApp.CommonExtensions\MagazineApp.CommonExtensions.csproj">
       <Project>{D5FCC39D-2190-46C0-8B53-48A902B67907}</Project>
       <Name>MagazineApp.CommonExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.ContractsExtension\MagazineApp.ContractsExtension.csproj">
+      <Project>{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}</Project>
+      <Name>MagazineApp.ContractsExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.Contracts\MagazineApp.Contracts.csproj">
+      <Project>{31440FD1-A989-42BB-A461-7EC9D08CCA1B}</Project>
+      <Name>MagazineApp.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MagazineApp.DomainExtension\MagazineApp.DomainExtension.csproj">
+      <Project>{028EE594-E948-4460-9BE2-517CEE7D878F}</Project>
+      <Name>MagazineApp.DomainExtension</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

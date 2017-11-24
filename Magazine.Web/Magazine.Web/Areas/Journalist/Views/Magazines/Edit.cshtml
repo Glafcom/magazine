@@ -46,10 +46,10 @@
                                 <td>@article.ShortText</td>
                                 <td>@($"{article.Author.Name} {article.Author.Surname}")</td>
                                 <td>
-                                    <a href="@Url.Action("Details", "Articles", new { id = article.Id })" class="btn btn-default">Details</a>
+                                    <a href="@Url.Action("Details", "Articles", new { id = article.Id, area = "Journalist" })" class="btn btn-default">Details</a>
                                 </td>
                                 <td>
-                                    <button class="btn btn-default remove-article-btn">Remove</button>
+                                    <a href="@Url.Action("DeleteArticle", "Magazines", new { articleId = article.Id, id = Model.Id, area = "Journalist" })" class="btn btn-danger remove-article-btn">Remove</a>
                                 </td>
                             </tr>
                         }
@@ -60,7 +60,7 @@
             else {
                 <p>The Articles list is empty</p>
             }
-            <a href="@Url.Action("Create", "Articles", new { area = "Journalist" })" class="btn btn-default pull-right">Add</a>
+            <a href="@Url.Action("Create", "Articles", new { magazineId = Model.Id, area = "Journalist" })" class="btn btn-default pull-right">Add</a>
         </div>
 
         <div class="form-group" style="margin-top:50px;">

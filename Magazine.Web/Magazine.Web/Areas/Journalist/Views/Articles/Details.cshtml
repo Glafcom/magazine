@@ -6,29 +6,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Caption</h2>
-
-<div class="article-picture">
-    <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture)) : "#")" class="file-preview-image" title="@Model.Caption">
-</div>
 
 
+<div class="article-container container" style="margin-top:60px;">
 
-<div class="container article-container">
-    <div class="body-content">
-        @Model.LongText
-    </div>
-</div>
-
-<div class="article-footer">
     <div class="row">
+        <div class="col-md-12">
+            <div class="caption container">
+                <h2>@Model.Caption</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <div class="article-picture container">
+                <img src="@(Model.MainPicture != null ? String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(Model.MainPicture)) : "#")" class="file-preview-image" title="@Model.Caption" style="max-height:100px;">
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:30px;">
+        <div class="col-md-12">
+            <div class="article-text-container container">
+                <span style="font-size:medium">@Model.LongText</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row article-footer" style="margin-top:60px;">
         <div class="col-md-6">
-            <span>@Model.CreateDate.ToString("dd.MM.yyyy")</span>
+            <div class="container">
+                <span style="font-weight:bold; font-size:medium">@Model.CreateDate.ToString("dd.MM.yyyy")</span>
+            </div>
         </div>
         <div class="col-md-6">
-            <span>@($"{Model.Author.Name} {Model.Author.Surname}")</span>
+            <span style="font-weight:bold; font-size:medium">@($"{Model.Author.Name} {Model.Author.Surname}")</span>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:40px;">
+        <div class="col-md-12">
+            <div class="container">
+                <a href="javascript:history.back()" class="btn btn-default">Back</a>
+            </div>
         </div>
     </div>
 </div>
-
-<a href="@Url.Action("Index", "Articles", new { area = "Journalist" })" class="btn btn-default">Back</a>

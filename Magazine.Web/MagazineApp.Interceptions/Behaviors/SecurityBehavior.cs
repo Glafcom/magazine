@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity.InterceptionExtension;
+﻿using MagazineApp.CommonExtensions.Exceptions;
+using Microsoft.Practices.Unity.InterceptionExtension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,15 @@ namespace MagazineApp.Interceptions.Behaviors {
         
         public IMethodReturn Invoke(IMethodInvocation input, GetNextInterceptionBehaviorDelegate getNext) {
             var currentUser = HttpContext.Current?.User;
+            var methodName = input.MethodBase.Name;
+            var target = input.Target.ToString();
 
-            if (currentUser == null && !currentUser.IsInRole("Editor"))
-                return null;
-                
+            if (target.Contains("ArticleService")) {
+                if (new string[] { "AddItem", "ChangeItem", "DeleteItem"}.Contains(methodName) && (currentUser == null || !currentUser.IsInRole("Editor"))) {
+                    return input.CreateExceptionMethodReturn(new AuthorizationException("You have no rights for this operation"));
+                }
+            }
+                            
             var result = getNext()(input, getNext);
 
             return result;

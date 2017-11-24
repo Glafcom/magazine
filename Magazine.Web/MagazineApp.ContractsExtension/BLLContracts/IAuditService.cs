@@ -5,17 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagazineApp.BLLExtension.Interfaces {
+namespace MagazineApp.ContractsExtension.BLLContracts {
     public interface IAuditService {
         List<AuditArticle> GetArticles();
         AuditArticle GetArticleById(Guid id);
         AuditArticle GetLastArticle();
-        void AddArticleRecord(AuditArticle article);
+        AuditArticle GetFirstArticleByOriginalId(Guid id);
+        AuditArticle GetLastArticleByOriginalId(Guid id);
+        void AddArticleRecord(AuditArticle article, bool isNew = true);
 
         List<AuditMagazine> GetMagazines();
         AuditMagazine GetMagazineById(Guid id);
         AuditMagazine GetLastMagazine();
-        void AddMagazineRecord(AuditMagazine magazine);
+        AuditMagazine GetFirstMagazineByOriginalId(Guid id);
+        AuditMagazine GetLastMagazineByOriginalId(Guid id);
+        void AddMagazineRecord(AuditMagazine magazine, bool isNew = true);
 
 
     }

@@ -13,12 +13,12 @@ namespace MagazineApp.DAL.AppDbContext {
 
         public MagazineAppDbContext()
             : base("MagazineAppDbConnection") {
-
+            Database.SetInitializer<MagazineAppDbContext>(null);
         }
 
         public MagazineAppDbContext(string connectionString)
             : base(connectionString) {
-            
+            Database.SetInitializer<MagazineAppDbContext>(null);
         }
 
         public DbSet<Article> Articles { get; set; }

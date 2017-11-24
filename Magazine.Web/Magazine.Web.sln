@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.BLLExtension", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.CommonExtensions", "MagazineApp.CommonExtensions\MagazineApp.CommonExtensions.csproj", "{D5FCC39D-2190-46C0-8B53-48A902B67907}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagazineApp.ContractsExtension", "MagazineApp.ContractsExtension\MagazineApp.ContractsExtension.csproj", "{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{D5FCC39D-2190-46C0-8B53-48A902B67907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5FCC39D-2190-46C0-8B53-48A902B67907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5FCC39D-2190-46C0-8B53-48A902B67907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,5 +98,6 @@ Global
 		{4FCE2215-1DE6-4EBF-BC37-1F242EE474FD} = {146C3606-EF04-4E8F-88CF-9473635BF985}
 		{FD1A16BB-6D11-44A1-94AD-9B628603D19D} = {146C3606-EF04-4E8F-88CF-9473635BF985}
 		{D5FCC39D-2190-46C0-8B53-48A902B67907} = {146C3606-EF04-4E8F-88CF-9473635BF985}
+		{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E} = {146C3606-EF04-4E8F-88CF-9473635BF985}
 	EndGlobalSection
 EndGlobal

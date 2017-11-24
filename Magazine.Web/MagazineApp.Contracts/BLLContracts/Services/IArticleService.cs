@@ -9,5 +9,6 @@ using System.Threading.Tasks;
 namespace MagazineApp.Contracts.BLLContracts.Services {
     public interface IArticleService : IBaseService<Article> {
         List<Article> GetArticlesByFilter(ArticleFilter filter);
+        List<Article> GetPublishedArticlesByFilter(ArticleFilter filter);
     }
 }

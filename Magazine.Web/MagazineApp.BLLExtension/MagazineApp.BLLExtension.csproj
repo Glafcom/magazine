@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAuditService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuditService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\MagazineApp.ContractsExtension\MagazineApp.ContractsExtension.csproj">
+      <Project>{B8AA6A1B-8EC6-4B0B-9C9F-44638048270E}</Project>
+      <Name>MagazineApp.ContractsExtension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MagazineApp.DALExtension\MagazineApp.DALExtension.csproj">
       <Project>{4FCE2215-1DE6-4EBF-BC37-1F242EE474FD}</Project>
       <Name>MagazineApp.DALExtension</Name>

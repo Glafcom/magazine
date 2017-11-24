@@ -7,8 +7,10 @@
 }
 
 <h2>Magazines</h2>
+@*
+    @Html.Partial("_MagazineFilterPartialView", Model.Filter)
+*@
 
-@Html.Partial("_MagazineFilterPartialView", Model.Filter)
 
 <div class="magazines-container container">
     <div class="magazines-table">
@@ -42,13 +44,19 @@
                                 <td>@(isPublished ? magazine.PublishDate.Value.ToString("dd-MM-yyyy") : string.Empty)</td>
                                 <td>@publisher</td>
                                 <td>
-                                    <button class="btn btn-default publish-button">Publish</button>
-                                    <button class="btn btn-default unpublish-button">Unpublish</button>
+                                    @if (isPublished) {
+                                        <a href="@Url.Action("Unpublish", "Magazines", new { id = magazine.Id })" class="btn btn-danger unpublish-button">Unpublish</a>
+                                    }
+                                    else {
+                                        <a href="@Url.Action("Publish", "Magazines", new { id = magazine.Id })" class="btn btn-info publish-button">Publish</a>
+                                    }
+                                    
+
                                 </td>
                                 <td><a href="@Url.Action("Details", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Details</a></td>
                                 <td><a href="@Url.Action("Edit", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Edit</a></td>
                                 <td>
-                                    <a href="@Url.Action("Delete", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-default">Delete</a>
+                                    <a href="@Url.Action("Delete", "Magazines", new { id = magazine.Id, area = "Journalist" })" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             }

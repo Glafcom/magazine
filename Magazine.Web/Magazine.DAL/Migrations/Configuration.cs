@@ -13,7 +13,7 @@ namespace MagazineApp.DAL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(MagazineApp.DAL.AppDbContext.MagazineAppDbContext context)

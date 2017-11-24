@@ -11,5 +11,12 @@ namespace MagazineApp.DomainExtension.Models {
         public string ShortText { get; set; }
         public string LongText { get; set; }
         public byte[] MainPicture { get; set; }
+        public Guid MagazineId { get; set; }
+
+        public AuditArticle() {
+            Id = Guid.NewGuid();
+            CreateDate = DateTime.UtcNow;
+            UpdateDate = DateTime.UtcNow;
+        }
     }
 }

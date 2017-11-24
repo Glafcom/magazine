@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MagazineApp.CommonExtensions.CircuitBreaker {
+namespace MagazineApp.CommonExtensions.CircuitBreakerModels {
     public abstract class CircuitBreakerState {
         protected readonly CircuitBreaker _circuitBreaker;
         
